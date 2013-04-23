@@ -1,0 +1,146 @@
+---
+layout: post
+title: Two Timestamp Columns in MySQL
+published: true
+---
+<div class="CodeRay">
+    <div class="code"><pre>CREATE TABLE `test_table` (
+`id` INT( 10 ) NOT NULL,
+`created_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+`updated_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE = INNODB;</pre>
+    </div>
+</div>
+
+<p>That should be simple right? Apparently not:</p>
+<div class="CodeRay">
+    <div class="code">
+        <pre>Incorrect table definition; there can be only one TIMESTAMP column with CURRENT_TIMESTAMP in DEFAULT or ON UPDATE clause</pre>
+    </div>
+</div>
+
+<p>I can use CURRENT_TIMESTAMP in only one place in the table. So I can't have MySQL do what I intended it to do -
+    maintain two timestamps, one to store the record creation timestamp and another to store record update timestamp. So
+    I thought I'll maintain those two timestamps by myself in the app. Give me two simple TIMESTAMP fields:</p>
+<div class="CodeRay">
+    <div class="code"><pre>CREATE TABLE `test_table` (
+`id` INT( 10 ) NOT NULL,
+`created_at` TIMESTAMP NOT NULL,
+`updated_at` TIMESTAMP NOT NULL
+) ENGINE = INNODB;</pre>
+    </div>
+</div>
+
+<ol>
+    <li><img src="/images/2012-09-09-two-timestamp-columns-in-mysql/Screen_Shot_2012-09-10_at_12.06.29_AM.png"></li>
+</ol>
+
+<p>MySQL automatically set the first timestamp field to DEFAULT to CURRENT_TIMESTAMP and ON UPDATE to CURRENT_TIMESTAMP.
+    The second timestamp field was set to DEFAULT to 0. That was indeed strange.</p>
+<p>I thought I found a bug in MySQL. But no, it turns out it is actually a feature! Actually, it's a result of a
+    combination of features:</p>
+<ul>
+    <li>"<span
+            style="font-family: Helvetica, Arial, sans-serif; font-size: 14px; line-height: 25px;">With neither&nbsp;</span><code
+            class="literal"
+            style="margin: 0px; padding: 0px; border: 0px; vertical-align: baseline; background-color: white; color: #026789; font-weight: bold; font-family: Courier New, Courier, fixed, monospace; line-height: 25px;">DEFAULT
+        CURRENT_TIMESTAMP</code><span
+            style="font-family: Helvetica, Arial, sans-serif; font-size: 14px; line-height: 25px;">&nbsp;nor&nbsp;</span><code
+            class="literal"
+            style="margin: 0px; padding: 0px; border: 0px; vertical-align: baseline; background-color: white; color: #026789; font-weight: bold; font-family: Courier New, Courier, fixed, monospace; line-height: 25px;">ON
+        UPDATE CURRENT_TIMESTAMP</code><span
+            style="font-family: Helvetica, Arial, sans-serif; font-size: 14px; line-height: 25px;">, it is the same as specifying both&nbsp;</span><code
+            class="literal"
+            style="margin: 0px; padding: 0px; border: 0px; vertical-align: baseline; background-color: white; color: #026789; font-weight: bold; font-family: Courier New, Courier, fixed, monospace; line-height: 25px;">DEFAULT
+        CURRENT_TIMESTAMP</code><span
+            style="font-family: Helvetica, Arial, sans-serif; font-size: 14px; line-height: 25px;">&nbsp;and&nbsp;</span><code
+            class="literal"
+            style="margin: 0px; padding: 0px; border: 0px; vertical-align: baseline; background-color: white; color: #026789; font-weight: bold; font-family: Courier New, Courier, fixed, monospace; line-height: 25px;">ON
+        UPDATE CURRENT_TIMESTAMP</code><span
+            style="font-family: Helvetica, Arial, sans-serif; font-size: 14px; line-height: 25px;">.</span>"
+    </li>
+    <li>"<span style="font-family: Helvetica, Arial, sans-serif; font-size: 14px; line-height: 25px;">It need not be the first&nbsp;</span><a
+            href="http://dev.mysql.com/doc/refman/5.0/en/datetime.html"
+            title="11.1.5.1.&nbsp;The DATE, DATETIME, and TIMESTAMP Types" class="link"
+            style="margin: 0px; padding: 0px; border: 0px; font-size: 14px; vertical-align: baseline; color: #015a84; font-family: Helvetica, Arial, sans-serif; line-height: 25px;"><code
+            class="literal"
+            style="margin: 0px; padding: 0px; border: 0px; font-size: 13px; vertical-align: baseline; background-color: white; color: #026789; font-weight: bold; font-family: Courier New, Courier, fixed, monospace;">TIMESTAMP</code></a><span
+            style="font-family: Helvetica, Arial, sans-serif; font-size: 14px; line-height: 25px;">&nbsp;column in a table that is automatically initialized or updated to the current timestamp. However, to specify automatic initialization or updating for a different&nbsp;</span><a
+            href="http://dev.mysql.com/doc/refman/5.0/en/datetime.html"
+            title="11.1.5.1.&nbsp;The DATE, DATETIME, and TIMESTAMP Types" class="link"
+            style="margin: 0px; padding: 0px; border: 0px; font-size: 14px; vertical-align: baseline; color: #015a84; font-family: Helvetica, Arial, sans-serif; line-height: 25px;"><code
+            class="literal"
+            style="margin: 0px; padding: 0px; border: 0px; font-size: 13px; vertical-align: baseline; background-color: white; color: #026789; font-weight: bold; font-family: Courier New, Courier, fixed, monospace;">TIMESTAMP</code></a><span
+            style="font-family: Helvetica, Arial, sans-serif; font-size: 14px; line-height: 25px;">&nbsp;column, you must suppress the automatic properties for the first one. Then, for the other&nbsp;</span><a
+            href="http://dev.mysql.com/doc/refman/5.0/en/datetime.html"
+            title="11.1.5.1.&nbsp;The DATE, DATETIME, and TIMESTAMP Types" class="link"
+            style="margin: 0px; padding: 0px; border: 0px; font-size: 14px; vertical-align: baseline; color: #015a84; font-family: Helvetica, Arial, sans-serif; line-height: 25px;"><code
+            class="literal"
+            style="margin: 0px; padding: 0px; border: 0px; font-size: 13px; vertical-align: baseline; background-color: white; color: #026789; font-weight: bold; font-family: Courier New, Courier, fixed, monospace;">TIMESTAMP</code></a><span
+            style="font-family: Helvetica, Arial, sans-serif; font-size: 14px; line-height: 25px;">&nbsp;column, the rules for the&nbsp;</span><code
+            class="literal"
+            style="margin: 0px; padding: 0px; border: 0px; vertical-align: baseline; background-color: white; color: #026789; font-weight: bold; font-family: Courier New, Courier, fixed, monospace; line-height: 25px;">DEFAULT</code><span
+            style="font-family: Helvetica, Arial, sans-serif; font-size: 14px; line-height: 25px;">&nbsp;and&nbsp;</span><code
+            class="literal"
+            style="margin: 0px; padding: 0px; border: 0px; vertical-align: baseline; background-color: white; color: #026789; font-weight: bold; font-family: Courier New, Courier, fixed, monospace; line-height: 25px;">ON
+        UPDATE</code><span style="font-family: Helvetica, Arial, sans-serif; font-size: 14px; line-height: 25px;">&nbsp;clauses are the same as for the first&nbsp;</span><a
+            href="http://dev.mysql.com/doc/refman/5.0/en/datetime.html"
+            title="11.1.5.1.&nbsp;The DATE, DATETIME, and TIMESTAMP Types" class="link"
+            style="margin: 0px; padding: 0px; border: 0px; font-size: 14px; vertical-align: baseline; color: #015a84; font-family: Helvetica, Arial, sans-serif; line-height: 25px;"><code
+            class="literal"
+            style="margin: 0px; padding: 0px; border: 0px; font-size: 13px; vertical-align: baseline; background-color: white; color: #026789; font-weight: bold; font-family: Courier New, Courier, fixed, monospace;">TIMESTAMP</code></a><span
+            style="font-family: Helvetica, Arial, sans-serif; font-size: 14px; line-height: 25px;">&nbsp;column, except that if you omit both clauses, no automatic initialization or updating occurs.</span>"
+    </li>
+</ul>
+<p>Infering from the above two points from the MySQL manual, if there are two (or more) TIMESTAMP fileds in a table with
+    no DEFAULT and ON UPDATE clauses specified, MySQL automatically defaults the first timestamp field to have a DEFAULT
+    CURRENT_TIMESTAMP and an ON UPDATE CURRENT_TIMESTAMP field and the rest of the timestamp fields to have a DEFAULT 0.&nbsp;</p>
+<p>Now coming back to the problem at hand, I need to track the creation and update timestamps of a record. This can be
+    achieved using another feature:</p>
+<ul>
+    <li><span
+            style="font-family: Helvetica, Arial, sans-serif; font-size: 14px; line-height: 25px;">By default,&nbsp;</span><a
+            href="http://dev.mysql.com/doc/refman/5.0/en/datetime.html"
+            title="11.1.5.1.&nbsp;The DATE, DATETIME, and TIMESTAMP Types" class="link"
+            style="margin: 0px; padding: 0px; border: 0px; font-size: 14px; vertical-align: baseline; color: #015a84; font-family: Helvetica, Arial, sans-serif; line-height: 25px;"><code
+            class="literal"
+            style="margin: 0px; padding: 0px; border: 0px; font-size: 13px; vertical-align: baseline; background-color: white; color: #026789; font-weight: bold; font-family: Courier New, Courier, fixed, monospace;">TIMESTAMP</code></a><span
+            style="font-family: Helvetica, Arial, sans-serif; font-size: 14px; line-height: 25px;">&nbsp;columns are&nbsp;</span><code
+            class="literal"
+            style="margin: 0px; padding: 0px; border: 0px; vertical-align: baseline; background-color: white; color: #026789; font-weight: bold; font-family: Courier New, Courier, fixed, monospace; line-height: 25px;">NOT
+        NULL</code><span style="font-family: Helvetica, Arial, sans-serif; font-size: 14px; line-height: 25px;">, cannot contain&nbsp;</span><code
+            class="literal"
+            style="margin: 0px; padding: 0px; border: 0px; vertical-align: baseline; background-color: white; color: #026789; font-weight: bold; font-family: Courier New, Courier, fixed, monospace; line-height: 25px;">NULL</code><span
+            style="font-family: Helvetica, Arial, sans-serif; font-size: 14px; line-height: 25px;">&nbsp;values, and assigning&nbsp;</span><code
+            class="literal"
+            style="margin: 0px; padding: 0px; border: 0px; vertical-align: baseline; background-color: white; color: #026789; font-weight: bold; font-family: Courier New, Courier, fixed, monospace; line-height: 25px;">NULL</code><span
+            style="font-family: Helvetica, Arial, sans-serif; font-size: 14px; line-height: 25px;">&nbsp;assigns the current timestamp.</span>
+    </li>
+</ul>
+<p>So if I assign a NULL value to a NOT NULL TIMESTAMP field, it uses the current timestamp value instead! And that'll
+    be my created_at field. The updated_at TIMESTAMP field can have DEFAULT CURRENT_TIMESTAMP and an ON UPDATE
+    CURRENT_TIMESTAMP to track the update time. So just to keep it a little more obvious I now use the following CREATE
+    TABLE:</p>
+<div class="CodeRay">
+    <div class="code"><pre>CREATE TABLE `test_table` (
+`id` INT( 10 ) NOT NULL,
+`created_at` TIMESTAMP NOT NULL DEFAULT 0,
+`updated_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE = INNODB;</pre>
+    </div>
+</div>
+
+<p>The corresponding INSERT statment will be:</p>
+<p>References:</p>
+<ul>
+    <li><a href="http://stackoverflow.com/questions/4851672/one-mysql-table-with-multiple-timestamp-columns"
+           target="_blank">http://stackoverflow.com/questions/4851672/one-mysql-table-with-multiple-timestamp-columns</a>
+    </li>
+    <li><a href="http://dev.mysql.com/doc/refman/5.0/en/timestamp-initialization.html" target="_blank">http://dev.mysql.com/doc/refman/5.0/en/timestamp-initialization.html</a>
+    </li>
+</ul>
+<div class="CodeRay">
+    <div class="code">
+        <pre>INSERT INTO test_table (id, created_at, updated_at) VALUES (1, NULL, NULL);</pre>
+    </div>
+</div>

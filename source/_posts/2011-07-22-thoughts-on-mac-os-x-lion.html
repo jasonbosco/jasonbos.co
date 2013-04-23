@@ -1,0 +1,100 @@
+---
+layout: post
+title: Thoughts On Mac OS X Lion
+published: true
+---
+<p>The installation was a breeze. It was interesting to download an entire operating system as an "app" from the Mac App
+    Store. The installation couldn't have been any simpler. It asked only for the disk the OS needed to be installed on.
+    And 40 minutes later, the computer boots into the new OS with all my exisitng apps and data! This is quite unlike
+    the Windows experience with its umpteen number of options. At one point during the installation I was worried the
+    new OS would wipe out my data, but my faith on Apple's user oriented approach reassured me that they wouldn't be so
+    stupid as to wipe out user data without warning users. (I did have online backups and my code on remote repositories
+    anyway.)</p>
+<p>The login screen UI has changed.</p>
+<p>The default wallpaper has changed to a picture of a Andromeda.</p>
+<p>The scroll bars are tiny, and resemble the ones in iOS. Talking of scrolling, the most important change for me so far
+    has been the two finger scrolling. In Snow Leoperd, if you swipe down with two fingers, the page scrolls down. But
+    in Lion, this is reversed! To scroll down, you need swipe up! Though I now see how this is more logical than the old
+    method, I've gotten so used to the old swipe action that it gets quite annoying. I now have to tell myself that it's
+    like scrolling on an iPad. OS X Lion is more closer to iOS. EDIT: There is an option to change it back the old way.
+    They call the new way the "Natural way" in the Trackpad System Preferences. Also, the gestures for "show desktop"
+    and mission center / expose are different now.&nbsp;</p>
+<p>They've changed "Turn on Airport" to "Turn on Wifi".&nbsp;</p>
+<p>My user name now appears on the top right of the screen.</p>
+<p>Apps can be made full screen.&nbsp;</p>
+<p>Expose transforms to a new feature called Mission Control. It looks better than expose and is more useful if you ask
+    me.&nbsp;</p>
+<p>The new Launchapd feature is pretty awesome. It lines up all you apps just like in an iPad home screen. And you can
+    swipe left and right to switch pages. Again a feature resembling iOS.&nbsp;</p>
+<p>The System Preferences window now has email settings. And the interface to add a new email account resembles iOS
+    again. The Mail application also sports a new look.&nbsp;</p>
+<p>That was my experience in 15 minutes.&nbsp;</p>
+<p>More soon.</p>
+<p>EDIT: 07/24/2011</p>
+<p><span style="font-size: large;"><strong>Macports</strong></span></p>
+<p>Macports went haywire after the upgrade. As recommended on the macports site, I did a 'selfupdate' and an 'update
+    outdated' and it started complaining about libiconv not being present. After a little reading up, it looks like the
+    version of libiconv that I had only worked on Snow Leoperd. But when I tried to reinstall libiconv, it also tried to
+    reinstall gawk which is a dependency and again it would fail looking for libiconv. I had to reinstall every package
+    that I had installed via macports on Leopord. There is a guide at Mac Ports to help:&nbsp;<a
+            href="https://trac.macports.org/wiki/Migration" target="_blank">https://trac.macports.org/wiki/Migration</a>.
+    Now erlang fails to install via ports. It gets stuck at "logger not found" error. I found this:&nbsp;<a
+            href="https://trac.macports.org/ticket/30012" target="_blank">https://trac.macports.org/ticket/30012</a>. It
+    looks like a macports bug on Lion. So for now, I've decided to install Erlang from source. Everything else works
+    fine after the reinstall of macport packages.&nbsp;</p>
+<p><span style="font-size: medium;"><strong>Appcelerator</strong></span> doesn't work yet:&nbsp;<a
+        href="http://developer.appcelerator.com/question/122584/error-launching-desktop-app-dyld-symbol-not-found-iconv">http://developer.appcelerator.com/question/122584/error-launching-desktop-app...</a>
+</p>
+<div class="CodeRay">
+    <div class="code"><pre>dyld: Symbol not found: _iconv
+  Referenced from: /usr/lib/libcups.2.dylib
+  Expected in: /Users/jason/Library/Application Support/Titanium/modules/osx/php/1.1.0/libiconv.2.dylib
+ in /usr/lib/libcups.2.dylib</pre>
+    </div>
+</div>
+
+<p><span style="font-size: medium;"><strong>Erlang</strong></span> doesn't compile from source on Lion. It fails with
+    the error:&nbsp;</p>
+<div class="CodeRay">
+    <div class="code"><pre>(cd ../main &amp;&amp; make hipe.hrl)
+sed -e &quot;s;%VSN%;3.8;&quot; ../../hipe/main/hipe.hrl.src &gt; ../../hipe/main/hipe.hrl
+erlc -W  +debug_info +inline -o../ebin hipe_rtl.erl
+(no error logger present) error: &quot;Error in process &lt;0.1.0&gt; with exit value: \{\{badfun,[&lt;&lt;5 bytes&gt;&gt;,&lt;&lt;47 bytes&gt;&gt;,&lt;&lt;9 bytes&gt;&gt;,&lt;&lt;3 bytes&gt;&gt;,&lt;&lt;2 bytes&gt;&gt;,&lt;&lt;5 bytes&gt;&gt;,&lt;&lt;12 bytes&gt;&gt;,&lt;&lt;2 bytes&gt;&gt;,&lt;&lt;8 bytes&gt;&gt;,&lt;&lt;8 bytes&gt;&gt;,&lt;&lt;5 bytes&gt;&gt;,&lt;&lt;7 bytes&gt;&gt;,&lt;&lt;5 bytes&gt;&gt;,&lt;&lt;11 bytes&gt;&gt;,&lt;&lt;2 bytes&gt;&gt;,&lt;&lt;11 bytes&gt;&gt;,&lt;&lt;15 bytes&gt;&gt;,&lt;&lt;4 bytes&gt;&gt;,&lt;&lt;50 bytes&gt;&gt;,&lt;&lt;5 bytes&gt;&gt;,&lt;&lt;1 byte&gt;&gt;,&lt;&lt;7 bytes&gt;&gt;,&lt;&lt;10 bytes&gt;&gt;,&lt;&lt;7 bytes&gt;&gt;,&lt;&lt;6 bytes&gt;&gt;,&lt;&lt;7 bytes&gt;&gt;,&lt;&lt;7 bytes&gt;&gt;,&lt;&lt;6 bytes&gt;&gt;,&lt;&lt;12 bytes&gt;&gt;]},[{erlang,apply,2}]}\n&quot;</pre>
+    </div>
+</div>
+
+<p>Apparently XCode4 is the culprit which is causing this.</p>
+<p>EDIT: A commentor on HN suggested I read this:&nbsp;<a
+        href="http://erlang.org/pipermail/erlang-questions/2011-July/060177.html" target="_blank">http://erlang.org/pipermail/erlang-questions/2011-July/060177.html</a>.
+    So I tried&nbsp;</p>
+<div class="CodeRay">
+    <div class="code"><pre>CFLAGS=-O0
+./configure --enable-darwin-64bit</pre>
+    </div>
+</div>
+
+<p>and then</p>
+<div class="CodeRay">
+    <div class="code">
+        <pre>make</pre>
+    </div>
+</div>
+
+<p>but now it gets stuck with this:</p>
+<div class="CodeRay">
+    <div class="code">
+        <pre>ld: warning: ignoring file /Users/abcd/Downloads/otp_src_R14B03/erts/emulator/zlib/obj/i386-apple-darwin11.0.0/opt/libz.a, file was built for archive which is not the architecture being linked (x86_64) ld: warning: ignoring file /Users/abcd/Downloads/otp_src_R14B03/erts/emulator/pcre/obj/i386-apple-darwin11.0.0/opt/libepcre.a, file was built for archive which is not the architecture being linked (x86_64) Undefined symbols for architecture x86_64:...</pre>
+    </div>
+</div>
+
+<p>EDIT: I had to run those commands on a fresh copy of the source and it worked fine this time.&nbsp;<a
+        href="http://erlang.org/pipermail/erlang-questions/2011-July/060206.html" target="_blank">http://erlang.org/pipermail/erlang-questions/2011-July/060206.html</a>.
+    Apparently, "make clean" doesn't clean up everything and so that's why the commands wouldn't work earlier.&nbsp;</p>
+<p>Update:&nbsp;<strong><span style="font-size: large;">Bootcamp</span></strong><span style="font-size: large;"><span
+        style="font-size: small;">&nbsp;does not work! This is pretty shocking. After several months I needed to boot up Windows (thanks to DRM encoded wmv class lectures) and to my shock, I couldn't access the Bootcamp partition or was it just taking way too much time to boot into it. A quick search showed me that I had company. Oh well, good I didn't have any important data on my Windows partition.&nbsp;</span></span>
+</p>
+<p><span style="font-size: medium;">Update:</span> I now use Homebrew instead of Macports</p>
+<p><span style="font-size: medium;">Update:</span> I ended up purchasing parallels and upgrading my RAM to 8GB</p>
+<p><span style="font-size: medium;">Update:</span> The problem with <a
+        href="https://discussions.apple.com/thread/3190130?start=0&amp;tstart=0" target="_blank">dual monitors and full
+    screen apps</a> is plain annoying.</p>

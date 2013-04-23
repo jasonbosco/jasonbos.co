@@ -1,0 +1,18 @@
+---
+layout: post
+title: Interacting with Amazon EC2 instance during boot
+published: true
+---
+<p>Here's what I did:&nbsp;</p>
+<p>I added an extra EBS volume to an instance, mounted it on the instance, deleted the EBS volume, forgot to remove the
+    entry from /etc/fstab and rebooted the instance. Now it tell me at boot that it cannot find the volume and I need to
+    press a key to continue. I saw this on the read-only logs from the AWS management console. Since the instance is not
+    up fully, SSH connections are also denied. How do I interact with the boot screen and press that key it is asking me
+    to?! Apparently this cannot be done.&nbsp;</p>
+<p>Thanks to <a href="http://serverfault.com/users/86472/cyberx86" target="_blank">cyberx</a>&nbsp;on ServerFault,
+    there's a workaround to my particular situation: I created a snapshot of the EBS volume that won't let be boot in
+    and then created a new EBS volume from that snapshot, attached it as a secondary disk on another instance, edited
+    the etc/fstab file present on this disk and then attached the EBS volume back to the old instance. And that solved
+    my issue.&nbsp;</p>
+<p>But the real issue still remains. How do I interact with the boot screen? Hopefully Amazon will give me a way to do
+    this soon.</p>

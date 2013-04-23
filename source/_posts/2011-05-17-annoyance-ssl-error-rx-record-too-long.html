@@ -1,0 +1,23 @@
+---
+layout: post
+title: ! 'Annoyance: ssl_error_rx_record_too_long'
+published: true
+---
+<p>Everything was working perfectly. We had our self-signed SSL certificate, got our dev site working with it - it was
+    flawless. But then out of nowhere this error crops up:&nbsp;ssl_error_rx_record_too_long complaining about the SSL
+    certificate. This is the second time this has happened. The first time, I ignored it and simply disabled SSL for
+    that particular site :-) Now it looks like I have no other choice but to investigate. A quick search leads me to
+    believe that there is no universal solution to this error.&nbsp;</p>
+<p>Solution(s):</p>
+<p>1.&nbsp;Turn on SSL on port 443 (rather than serving regular HTTP off the SSL port) - Check.</p>
+<p>2. "Make sure you do not have more than one SSL certificate sharing the same IP. Please ensure that all SSL
+    certificates utilise their own dedicated IP".</p>
+<ul>
+    <li>I guess I need to use just one certificate for all the domains, instead of having an invidual one for each.</li>
+</ul>
+<p>Got it working finally. It was either because the browser wouldn't take 4096 bit encryption or I had more than one
+    SSL certificate for the same IP address. I'm leaning more towards the latter reason why it started working.</p>
+<ul>
+</ul>
+<p>&nbsp;</p>
+<p>&nbsp;</p>

@@ -1,0 +1,28 @@
+---
+layout: post
+title: Mount a new EBS volume on an EC2 instance
+published: true
+---
+<p>Attaching a new EBS volume to an instance does not automatically mount it. To mount the EBS volume:&nbsp;</p>
+<p>First format the EBS volume if needed:</p>
+<div class="CodeRay">
+    <div class="code">
+        <pre>mkfs.ext3 /dev/sdf</pre>
+    </div>
+</div>
+
+<p>Add</p>
+<div class="CodeRay">
+    <div class="code">
+        <pre>/dev/sdf /mountpoint ext3 noatime 0 0</pre>
+    </div>
+</div>
+
+<p>to /etc/fstab and then do</p>
+<div class="CodeRay">
+    <div class="code">
+        <pre>mount /mountpoint</pre>
+    </div>
+</div>
+
+<p>after creating the /mountpoint directory.</p>

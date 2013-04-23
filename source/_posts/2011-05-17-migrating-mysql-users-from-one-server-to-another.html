@@ -1,0 +1,28 @@
+---
+layout: post
+title: Migrating MySQL Users From One Server To Another
+published: true
+---
+<p>Migrating mysql databases is easy using mysqldump*. But moving users from one DB server to another seems a little
+    tricky. Based on <a
+            href="http://www.cyberciti.biz/tips/move-mysql-users-privileges-grants-from-one-host-to-new-host.html"
+            title="Vivek Gite's post" target="_blank">Vivek Gite's post</a>, here's a neat little piped set of commands
+    that you can run on the source DB server. The command will generate all the GRANT statements that you can simply run
+    on the destination DB server.</p>
+<div class="CodeRay">
+    <div class="code">
+        <pre>mysql -u &lt;ROOTUSERNAME&gt; -B -N -p&lt;ROOTPASSWORD&gt; -e &quot;SELECT user, host FROM user&quot; mysql | awk '{print &quot;mysql -u &lt;ROOTUSERNAME&gt; -p&lt;ROOTPASSWORD&gt; -B -N -e\&quot;SHOW GRANTS FOR &quot; $1 &quot;@&quot; $2 &quot;\&quot;&quot;}'</pre>
+    </div>
+</div>
+
+<p>The beauty of this is that you need not know the passwords for any of the mysql user accounts.</p>
+<p>&nbsp;</p>
+<p>*Migrating all databases except mysql and information_schema:</p>
+<div class="CodeRay">
+    <div class="code">
+        <pre>mysql -u &lt;MYSQLROOTTUSERNAME&gt; -p&lt;MYSQLROOTPWD&gt; -B -N -e&quot;SHOW DATABASES;&quot; | grep -v mysql | grep -v information_schema | xargs mysqldump -u &lt;MYSQLROOTTUSERNAME&gt; -p&lt;MYSQLROOTPWD&gt; --databases &gt; mysqldbdump.sql</pre>
+    </div>
+</div>
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>

@@ -1,0 +1,44 @@
+---
+layout: post
+title: ! 'MySQL: Updating Multiple Columns When Using Select'
+published: true
+---
+<p>I've always wanted to do something like this:</p>
+<div class="CodeRay">
+    <div class="code">
+        <pre>UPDATE table1 SET (col1,col2)=(SELECT x,y FROM table2 WHERE table1. CommonColumn =table2.CommonColumn);</pre>
+    </div>
+</div>
+
+<p>Finally I got around to looking it up and found the <a
+        href="http://stackoverflow.com/questions/2334712/sql-server-update-from-select" target="_blank">answer</a>&nbsp;to
+    how to do it on <span style="font-size: medium;"><strong>SQL Server</strong></span>:</p>
+<div class="CodeRay">
+    <div class="code"><pre>UPDATE
+    table1
+SET
+    table1.col1 = table2.x,
+    table1.col2 = table2.y
+FROM
+    table1
+INNER JOIN
+    table2
+ON
+    table1.CommonColumn = table2.CommonColumn</pre>
+    </div>
+</div>
+
+<p>However, in <strong><span style="font-size: medium;">MySQL</span></strong>&nbsp;this is not supported. To achieve the
+    same effect in MySQL I came up with this:</p>
+<div class="CodeRay">
+    <div class="code"><pre>UPDATE
+    table1 INNER JOIN table2 USING (CommonColumn)
+SET
+    table1.col1 = table2.x,
+    table1.col2 = table2.y</pre>
+    </div>
+</div>
+
+<p>The UPDATE syntax for MySQL is here:</p>
+<p><a href="http://dev.mysql.com/doc/refman/5.6/en/update.html" target="_blank">http://dev.mysql.com/doc/refman/5.6/en/update.html</a>
+</p>

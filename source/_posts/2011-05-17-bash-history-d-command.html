@@ -1,0 +1,22 @@
+---
+layout: post
+title: bash history -d command
+published: true
+---
+<p>I often find myself typing passwords into the bash shell in a hurry before I can type the command which is going to
+    ask for the password! This text gets into the bash history which really embarassing. To remove an item from the bash
+    history, type&nbsp;</p>
+<div class="CodeRay">
+    <div class="code">
+        <pre>history</pre>
+    </div>
+</div>
+
+<p>to view the items in the history along with the offset. Now type</p>
+<div class="CodeRay">
+    <div class="code">
+        <pre>history -d offset</pre>
+    </div>
+</div>
+
+<p>where offset is the one specified in the output of the previous command.</p>

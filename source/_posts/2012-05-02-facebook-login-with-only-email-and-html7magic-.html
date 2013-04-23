@@ -1,0 +1,30 @@
+---
+layout: post
+title: Facebook Login With Only Email and html7magic?
+published: true
+---
+<p>I happened to stumble on Carl's Jr.'s Facebook page today and particularly on this post (for no particular reason, I
+    should add):&nbsp;</p>
+<p><a href="http://www.facebook.com/91702965455/posts/10151579104835456" target="_blank">http://www.facebook.com/91702965455/posts/10151579104835456</a>
+</p>
+<p>
+    <img src="/images/2012-05-02-facebook-login-with-only-email-and-html7magic-/Screen_Shot_2012-05-02_at_8.56.46_PM.png">
+</p>
+
+<p>and I quickly noticed the login area on the top right. It only had an email field and a login button. (I was not
+    signed into Facebook when I visited the page.) For a brief moment I thought Facebook had finally done away with the
+    concept of passwords somehow!</p>
+<p>So I clicked on the login button and it took to me the standard Facebook login page. Oh well, passwords are here to
+    stay.</p>
+<p>But here's the question: why would Facebook do this? Why would they place only an email field on that page and not a
+    password field? Isn't it an extra step for users to click on the login button and then be directed to another page
+    to enter their password?</p>
+<p>And then I wondered if this was a CSS issue, and looked at the source code:&nbsp;
+<p>
+    <img src="/images/2012-05-02-facebook-login-with-only-email-and-html7magic-/Screen_Shot_2012-05-02_at_8.56.46_PM_2.png">
+</p>
+</p>
+<p>And I was able to confirm that it wasn't a CSS issue causing the password field to be hidden. There wasn't any input
+    field for a password on that page.&nbsp;</p>
+<p>And now I found something else that's interesting. A class named "html7magic". What am I to expect?! Is FB out there
+    using HTML 7 secretely and somehow translating their HTML7 code to HTML5 to work with current browsers?!&nbsp;</p>

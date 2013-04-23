@@ -1,0 +1,34 @@
+---
+layout: post
+title: Prime Candidate For SQL Injection!
+published: true
+---
+<p>I happened to stumble on this site which embeds the SQL query in their URL!&nbsp;</p>
+<div class="CodeRay">
+    <div class="code"><pre>http://www.s-cube-network.eu/refbase/search.php?
+sqlQuery=SELECT%20author%2C%20title%2C%20type%2C%20year%2C%20publication%2C
+%20abbrev_journal%2C%20volume%2C%20issue%2C%20pages%2C%20keywords%2C
+%20abstract%2C%20address%2C%20corporate_author%2C%20thesis%2C
+%20publisher%2C%20place%2C%20editor%2C%20language%2C%20summary_language%2C
+%20orig_title%2C%20series_editor%2C%20series_title%2C%20abbrev_series_title%2C
+%20series_volume%2C%20series_issue%2C%20edition%2C%20issn%2C%20isbn%2C
+%20medium%2C%20area%2C%20expedition%2C%20conference%2C%20notes%2C
+%20approved%2C%20call_number%2C%20serial%20FROM%20refs%20WHERE%20serial
+%20%3D%20494%20ORDER%20BY%20author%2C%20year%20ASC%2C%20publication
+&amp;client=&amp;formType=sqlSearch&amp;submit=Display&amp;viewType=&amp;showQuery=1&amp;showLinks=1
+&amp;showRows=30&amp;rowOffset=&amp;wrapResults=1&amp;citeOrder=&amp;citeStyle=APA&amp;exportFormat=RIS
+&amp;exportType=html&amp;exportStylesheet=&amp;citeType=html&amp;headerMsg=</pre>
+    </div>
+</div>
+
+<p>
+    <a href="http://www.s-cube-network.eu/refbase/search.php?sqlQuery=SELECT%20author%2C%20title%2C%20type%2C%20year%2C%20publication%2C%20abbrev_journal%2C%20volume%2C%20issue%2C%20pages%2C%20keywords%2C%20abstract%2C%20address%2C%20corporate_author%2C%20thesis%2C%20publisher%2C%20place%2C%20editor%2C%20language%2C%20summary_language%2C%20orig_title%2C%20series_editor%2C%20series_title%2C%20abbrev_series_title%2C%20series_volume%2C%20series_issue%2C%20edition%2C%20issn%2C%20isbn%2C%20medium%2C%20area%2C%20expedition%2C%20conference%2C%20notes%2C%20approved%2C%20call_number%2C%20serial%20FROM%20refs%20WHERE%20serial%20%3D%20494%20ORDER%20BY%20author%2C%20year%20ASC%2C%20publication&amp;client=&amp;formType=sqlSearch&amp;submit=Display&amp;viewType=&amp;showQuery=1&amp;showLinks=1&amp;showRows=30&amp;rowOffset=&amp;wrapResults=1&amp;citeOrder=&amp;citeStyle=APA&amp;exportFormat=RIS&amp;exportType=html&amp;exportStylesheet=&amp;citeType=html&amp;headerMsg="
+       target="_blank">Clickable Link</a></p>
+<p>As you can imagine, the first thing that occured to me was to change that SQL query to something fitting, may be
+    replace the SELECT query with a DELETE? Nah.. I shouldn't be malicious I thought. And so I tried a simple UPDATE of
+    one of the attributes, something which if it went through, I could easily revert back and not cause any damage. And
+    so I tried an UPDATE query. Good for them, they atleast restricted the DB user to only perform SELECTs on the table.&nbsp;</p>
+<p>Here I am thinking "I should sanitize all my input" worrying about SQL injection and stuff. And I see this. Made my
+    day or should I say year. Happy New Year!</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>

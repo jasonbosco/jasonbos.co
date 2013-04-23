@@ -1,0 +1,14 @@
+---
+layout: post
+title: Change host-name on a mac
+published: true
+---
+<p>I have the host-name on my MacBook set as Jason-MBP. But when I connect to the campus wireless network the hostname
+    automatically changes to something else. This started causing problems when starting erlang shells with my original
+    host-name. So I had to change it back to my original hostname to get the erl shell working. Found this after a bit
+    of googling:&nbsp;</p>
+<div class="CodeRay">
+    <div class="code">
+        <pre>sudo scutil --set HostName Jason-MBP.local</pre>
+    </div>
+</div>

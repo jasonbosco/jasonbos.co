@@ -1,0 +1,37 @@
+---
+layout: post
+title: ! 'Solution: ''NSInternalInconsistencyException'', reason: ''invalid nib registered
+for identifier ((null)) - nib must contain exactly one top level object which must
+be a UITableViewCell instance'''
+published: true
+---
+<p>This seems pretty obvious now that I know it but my Google fu failed me on this one, so I thought I'll add a note
+    about it should someone encounterthis issue. I was working with the TableViewController and my app would crash with
+    this error:</p>
+<div class="CodeRay">
+    <div class="code"><pre>2012-08-15 19:59:43.706 transcribe-ios[42544:10703] Missing proxy for identifier UpstreamPlaceholder-13
+2012-08-15 19:59:43.707 transcribe-ios[42544:10703] *** Assertion failure in -[UITableView dequeueReusableCellWithIdentifier:], /SourceCache/UIKit_Sim/UIKit-1914.84/UITableView.m:4118
+2012-08-15 19:59:43.707 transcribe-ios[42544:10703] *** Terminating app due to uncaught exception 'NSInternalInconsistencyException', reason: 'invalid nib registered for identifier ((null)) - nib must contain exactly one top level object which must be a UITableViewCell instance'
+*** First throw call stack:
+(0x1990022 0x2990cd6 0x1938a48 0xc132cb 0x30f316 0x12191 0x316c54 0x3173ce 0x302cbd 0x3116f1 0x2bad42 0x1991e42 0x24e5679 0x24ef579 0x24744f7 0x24763f6 0x2503160 0x28cf30 0x196499e 0x18fb640 0x18c74c6 0x18c6d84 0x18c6c9b 0x2f297d8 0x2f2988a 0x27c626 0x1e9d 0x1e05 0x1)
+terminate called throwing an exception(lldb)</pre>
+    </div>
+</div>
+
+<p>I'm using a StoryBoard and the issue is that I had more than one prototype cell visible in the table view. The error
+    says that there is more than 1 cell with the same
+    Identifier:[[posterous-content:oshkqgpizJgvnbyDhkgj]][[posterous-content:vJpCmictEDqIFpgcADGz]]</p>
+<p>The solution is to set the number of Prototype Cells to the actual number of different types of cells you have (the
+    'type' being identified by the 'identifier'). In my case, I just had 1 type of cell and so I set the number of
+    Prototype Cells to 1.</p>
+<ol>
+    <li><img
+            src="/images/2012-08-15-solution-nsinternalinconsistencyexception-reason-invalid-nib-registered-for-identifier-null-nib-must-contain-exactly-one-top-level-object-which-must-be-a-uitableviewcell-instance-/Screen_Shot_2012-08-15_at_8.04.27_PM.png">
+    </li>
+    <li><img
+            src="/images/2012-08-15-solution-nsinternalinconsistencyexception-reason-invalid-nib-registered-for-identifier-null-nib-must-contain-exactly-one-top-level-object-which-must-be-a-uitableviewcell-instance-/Screen_Shot_2012-08-15_at_8.07.24_PM.png">
+    </li>
+    <li><img
+            src="/images/2012-08-15-solution-nsinternalinconsistencyexception-reason-invalid-nib-registered-for-identifier-null-nib-must-contain-exactly-one-top-level-object-which-must-be-a-uitableviewcell-instance-/Screen_Shot_2012-08-15_at_8.14.22_PM.png">
+    </li>
+</ol>

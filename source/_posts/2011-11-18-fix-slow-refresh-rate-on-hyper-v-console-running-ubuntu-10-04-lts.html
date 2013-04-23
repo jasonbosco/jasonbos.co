@@ -1,0 +1,30 @@
+---
+layout: post
+title: ! 'Fix: Slow Refresh Rate On Hyper-V console running Ubuntu 10.04 LTS'
+published: true
+---
+<p>When I connect to a virtual machine running Ubuntu 10.04 LTS on Hyper-V, the refresh rate of the console used to be
+    terribly slow. It would refresh the screen <strong>line by line</strong> with each line taking 1 second! It was
+    painfully slow. So, all this while, I used <a href="http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html"
+                                                  target="_blank">putty</a> to SSH into the VM just to avoid using the
+    console. And then came a situation where I locked myself out of the instance (thank you <a
+            href="http://denyhosts.sourceforge.net/" target="_blank">DenyHosts</a>&nbsp;for doing your job well) and I
+    had disabled remote root login. So I was forced to use the console and it was time I find <a
+            href="http://screamingadmin.wordpress.com/2010/07/08/vga16fb-and-ubuntu-10-04-server/" target="_blank">a
+        solution</a> for the slow refresh rate. It was quite simple:</p>
+<p>Add the line</p>
+<div class="CodeRay">
+    <div class="code">
+        <pre>blacklist vga16fb</pre>
+    </div>
+</div>
+
+<p>to</p>
+<div class="CodeRay">
+    <div class="code">
+        <pre>/etc/modprobe.d/blacklist-framebuffer.conf</pre>
+    </div>
+</div>
+
+<p>and restart the virtual machine. And now the refresh rate is back to normal.</p>
+<p>&nbsp;</p>
