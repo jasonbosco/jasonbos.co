@@ -12,7 +12,8 @@ published: true
     reset the "Shell" registry key in Safe Mode but that didn't fix the error.</p>
 <p>Today, when I was trying to fix this, I had the user login, and when the desktop finally showed up, I fired up Event
     Viewer, and found this: Error ID 6006 and Error ID 6005. A quick lookup led me to this post:&nbsp;<a
-            href="http://social.technet.microsoft.com/Forums/en-US/itprovistanetworking/thread/56310e15-32df-457a-bc38-4cc2fce0a5e5/.&nbsp;</p">http://social.technet.microsoft.com/Forums/en-US/itprovistanetworking/thread/...</a>>
+            href="http://social.technet.microsoft.com/Forums/en-US/itprovistanetworking/thread/56310e15-32df-457a-bc38-4cc2fce0a5e5/">http://social.technet.microsoft.com/Forums/en-US/itprovistanetworking/thread/56310e15-32df-457a-bc38-4cc2fce0a5e5/.</a>
+</p>
 <p>Since the error was related to a slow login time, I guessed this could be related to the KSOD. One of points
     mentioned on that page was about Printer connections slowing down the GPO RSOP processing. Under the user's login, I
     opened up Devices and Printers and sure enough, the Window was endlessly loading. So I logged in as admin and

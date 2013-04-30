@@ -20,18 +20,17 @@ terminate called throwing an exception(lldb)</pre>
 
 <p>I'm using a StoryBoard and the issue is that I had more than one prototype cell visible in the table view. The error
     says that there is more than 1 cell with the same
-    Identifier:[[posterous-content:oshkqgpizJgvnbyDhkgj]][[posterous-content:vJpCmictEDqIFpgcADGz]]</p>
+    Identifier:
+<p>
+    <img src="/images/2012-08-15-solution-nsinternalinconsistencyexception-reason-invalid-nib-registered-for-identifier-null-nib-must-contain-exactly-one-top-level-object-which-must-be-a-uitableviewcell-instance/Screen_Shot_2012-08-15_at_8.04.27_PM.png">
+</p>
+<p>
+    <img src="/images/2012-08-15-solution-nsinternalinconsistencyexception-reason-invalid-nib-registered-for-identifier-null-nib-must-contain-exactly-one-top-level-object-which-must-be-a-uitableviewcell-instance/Screen_Shot_2012-08-15_at_8.07.24_PM.png">
+</p>
+
 <p>The solution is to set the number of Prototype Cells to the actual number of different types of cells you have (the
     'type' being identified by the 'identifier'). In my case, I just had 1 type of cell and so I set the number of
     Prototype Cells to 1.</p>
-<ol>
-    <li><img
-            src="/images/2012-08-15-solution-nsinternalinconsistencyexception-reason-invalid-nib-registered-for-identifier-null-nib-must-contain-exactly-one-top-level-object-which-must-be-a-uitableviewcell-instance-/Screen_Shot_2012-08-15_at_8.04.27_PM.png">
-    </li>
-    <li><img
-            src="/images/2012-08-15-solution-nsinternalinconsistencyexception-reason-invalid-nib-registered-for-identifier-null-nib-must-contain-exactly-one-top-level-object-which-must-be-a-uitableviewcell-instance-/Screen_Shot_2012-08-15_at_8.07.24_PM.png">
-    </li>
-    <li><img
-            src="/images/2012-08-15-solution-nsinternalinconsistencyexception-reason-invalid-nib-registered-for-identifier-null-nib-must-contain-exactly-one-top-level-object-which-must-be-a-uitableviewcell-instance-/Screen_Shot_2012-08-15_at_8.14.22_PM.png">
-    </li>
-</ol>
+<p>
+    <img src="/images/2012-08-15-solution-nsinternalinconsistencyexception-reason-invalid-nib-registered-for-identifier-null-nib-must-contain-exactly-one-top-level-object-which-must-be-a-uitableviewcell-instance/Screen_Shot_2012-08-15_at_8.14.22_PM.png">
+</p>
