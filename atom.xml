@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Jason Bosco]]></title>
-  <link href="http://jasonbosco.github.io/jasonbos/atom.xml" rel="self"/>
-  <link href="http://jasonbosco.github.io/jasonbos/"/>
-  <updated>2013-05-03T20:48:30-07:00</updated>
-  <id>http://jasonbosco.github.io/jasonbos/</id>
+  <link href="http://jasonbos.co/atom.xml" rel="self"/>
+  <link href="http://jasonbos.co/"/>
+  <updated>2013-05-03T20:54:27-07:00</updated>
+  <id>http://jasonbos.co/</id>
   <author>
     <name><![CDATA[Jason Bosco]]></name>
     <email><![CDATA[jb@jbos.co]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Our First TechCrunch Article]]></title>
-    <link href="http://jasonbosco.github.io/jasonbos/our-first-techcrunch-article/"/>
+    <link href="http://jasonbos.co/our-first-techcrunch-article/"/>
     <updated>2013-04-11T00:00:00-07:00</updated>
-    <id>http://jasonbosco.github.io/jasonbos/our-first-techcrunch-article</id>
+    <id>http://jasonbos.co/our-first-techcrunch-article</id>
     <content type="html"><![CDATA[<p>Say hello to <a href="http://codassium.com" target="_blank">codassium.com</a> that <a
         href="http://www.kishorelive.com" target="_blank">Kishore</a> and I are working on. It&#8217;s been quite a remarkable
     experience - we made it to the front page of <a href="https://news.ycombinator.com/item?id=5493634" target="_blank">HN</a>&nbsp;on
@@ -25,7 +25,7 @@
             href="http://techcrunch.com/2013/04/10/hiring-developers-codassium-mashes-up-a-collaborative-code-editor-with-real-time-video-chat/">http://techcrunch.com/2013/04/10/hiring-developers-codassium-mashes-up-a-coll&#8230;</a>
 </p>
 
-<p><img src="http://jasonbosco.github.io/jasonbos/images/2013-04-11-our-first-techcrunch-article/Screen_Shot_2013-04-11_at_12.47.58_AM.png"></p>
+<p><img src="http://jasonbos.co/images/2013-04-11-our-first-techcrunch-article/Screen_Shot_2013-04-11_at_12.47.58_AM.png"></p>
 
 <p>Exciting times!&nbsp;</p>
 ]]></content>
@@ -33,9 +33,9 @@
   
   <entry>
     <title type="html"><![CDATA[Transcribe featured on TheNextWeb again: 35 of the best productivity and lifehack apps of 2012]]></title>
-    <link href="http://jasonbosco.github.io/jasonbos/transcribe-featured-on-thenextweb-again-35-of-the-best-productivity-and-lifehack-apps-of-2012/"/>
+    <link href="http://jasonbos.co/transcribe-featured-on-thenextweb-again-35-of-the-best-productivity-and-lifehack-apps-of-2012/"/>
     <updated>2013-01-05T00:00:00-08:00</updated>
-    <id>http://jasonbosco.github.io/jasonbos/transcribe-featured-on-thenextweb-again-35-of-the-best-productivity-and-lifehack-apps-of-2012</id>
+    <id>http://jasonbos.co/transcribe-featured-on-thenextweb-again-35-of-the-best-productivity-and-lifehack-apps-of-2012</id>
     <content type="html"><![CDATA[<p>Quite an honor to be featured on TheNextWeb as one of the best productvity apps of 2012:&nbsp;<a
         href="http://thenextweb.com/apps/2012/12/20/35-best-productivity-apps-of-2012/5/">http://thenextweb.com/apps/2012/12/20/35-best-productivity-apps-of-2012/5/</a>
 </p>
@@ -44,9 +44,9 @@
   
   <entry>
     <title type="html"><![CDATA[Two Timestamp Columns in MySQL]]></title>
-    <link href="http://jasonbosco.github.io/jasonbos/two-timestamp-columns-in-mysql/"/>
+    <link href="http://jasonbos.co/two-timestamp-columns-in-mysql/"/>
     <updated>2012-09-09T00:00:00-07:00</updated>
-    <id>http://jasonbosco.github.io/jasonbos/two-timestamp-columns-in-mysql</id>
+    <id>http://jasonbos.co/two-timestamp-columns-in-mysql</id>
     <content type="html"><![CDATA[<div class="CodeRay">
     <div class="code"><pre>CREATE TABLE `test_table` (
 `id` INT( 10 ) NOT NULL,
@@ -76,7 +76,7 @@
 </div>
 
 <ol>
-    <li><img src="http://jasonbosco.github.io/jasonbos/images/2012-09-09-two-timestamp-columns-in-mysql/Screen_Shot_2012-09-10_at_12.06.29_AM.png"></li>
+    <li><img src="http://jasonbos.co/images/2012-09-09-two-timestamp-columns-in-mysql/Screen_Shot_2012-09-10_at_12.06.29_AM.png"></li>
 </ol>
 
 <p>MySQL automatically set the first timestamp field to DEFAULT to CURRENT_TIMESTAMP and ON UPDATE to CURRENT_TIMESTAMP.
@@ -193,9 +193,9 @@
   
   <entry>
     <title type="html"><![CDATA[Solution: 'NSInternalInconsistencyException', reason: 'invalid nib registered for identifier ((null)) - nib must contain exactly one top level object which must be a UITableViewCell instance']]></title>
-    <link href="http://jasonbosco.github.io/jasonbos/solution-nsinternalinconsistencyexception-reason-invalid-nib-registered-for-identifier-null-nib-must-contain-exactly-one-top-level-object-which-must-be-a-uitableviewcell-instance/"/>
+    <link href="http://jasonbos.co/solution-nsinternalinconsistencyexception-reason-invalid-nib-registered-for-identifier-null-nib-must-contain-exactly-one-top-level-object-which-must-be-a-uitableviewcell-instance/"/>
     <updated>2012-08-15T00:00:00-07:00</updated>
-    <id>http://jasonbosco.github.io/jasonbos/solution-nsinternalinconsistencyexception-reason-invalid-nib-registered-for-identifier-null-nib-must-contain-exactly-one-top-level-object-which-must-be-a-uitableviewcell-instance</id>
+    <id>http://jasonbos.co/solution-nsinternalinconsistencyexception-reason-invalid-nib-registered-for-identifier-null-nib-must-contain-exactly-one-top-level-object-which-must-be-a-uitableviewcell-instance</id>
     <content type="html"><![CDATA[<p>This seems pretty obvious now that I know it but my Google fu failed me on this one, so I thought I&#8217;ll add a note
     about it should someone encounterthis issue. I was working with the TableViewController and my app would crash with
     this error:</p>
@@ -213,25 +213,25 @@ terminate called throwing an exception(lldb)</pre>
     says that there is more than 1 cell with the same
     Identifier:
 <p>
-    <img src="http://jasonbosco.github.io/jasonbos/images/2012-08-15-solution-nsinternalinconsistencyexception-reason-invalid-nib-registered-for-identifier-null-nib-must-contain-exactly-one-top-level-object-which-must-be-a-uitableviewcell-instance/Screen_Shot_2012-08-15_at_8.04.27_PM.png">
+    <img src="http://jasonbos.co/images/2012-08-15-solution-nsinternalinconsistencyexception-reason-invalid-nib-registered-for-identifier-null-nib-must-contain-exactly-one-top-level-object-which-must-be-a-uitableviewcell-instance/Screen_Shot_2012-08-15_at_8.04.27_PM.png">
 </p>
 <p>
-    <img src="http://jasonbosco.github.io/jasonbos/images/2012-08-15-solution-nsinternalinconsistencyexception-reason-invalid-nib-registered-for-identifier-null-nib-must-contain-exactly-one-top-level-object-which-must-be-a-uitableviewcell-instance/Screen_Shot_2012-08-15_at_8.07.24_PM.png">
+    <img src="http://jasonbos.co/images/2012-08-15-solution-nsinternalinconsistencyexception-reason-invalid-nib-registered-for-identifier-null-nib-must-contain-exactly-one-top-level-object-which-must-be-a-uitableviewcell-instance/Screen_Shot_2012-08-15_at_8.07.24_PM.png">
 </p>
 
 <p>The solution is to set the number of Prototype Cells to the actual number of different types of cells you have (the
     &#8216;type&#8217; being identified by the &#8216;identifier&#8217;). In my case, I just had 1 type of cell and so I set the number of
     Prototype Cells to 1.</p>
 <p>
-    <img src="http://jasonbosco.github.io/jasonbos/images/2012-08-15-solution-nsinternalinconsistencyexception-reason-invalid-nib-registered-for-identifier-null-nib-must-contain-exactly-one-top-level-object-which-must-be-a-uitableviewcell-instance/Screen_Shot_2012-08-15_at_8.14.22_PM.png">
+    <img src="http://jasonbos.co/images/2012-08-15-solution-nsinternalinconsistencyexception-reason-invalid-nib-registered-for-identifier-null-nib-must-contain-exactly-one-top-level-object-which-must-be-a-uitableviewcell-instance/Screen_Shot_2012-08-15_at_8.14.22_PM.png">
 </p>]]></content>
   </entry>
   
   <entry>
     <title type="html"><![CDATA[Our Tool "Transcribe" is featured on TheNextWeb]]></title>
-    <link href="http://jasonbosco.github.io/jasonbos/our-tool-transcribe-is-featured-on-thenextweb/"/>
+    <link href="http://jasonbos.co/our-tool-transcribe-is-featured-on-thenextweb/"/>
     <updated>2012-08-06T00:00:00-07:00</updated>
-    <id>http://jasonbosco.github.io/jasonbos/our-tool-transcribe-is-featured-on-thenextweb</id>
+    <id>http://jasonbos.co/our-tool-transcribe-is-featured-on-thenextweb</id>
     <content type="html"><![CDATA[<blockquote>
     <p><span
             style="color: #434343; font-family: Segoe UI, Proxima Nova, Helvetica Neue, Helvetica, Arial, sans-serif; font-size: 14px; line-height: 25.200000762939453px;">Aimed at journalists, students or anyone with a need to convert interviews and such like to the written from,&nbsp;</span><a
@@ -256,23 +256,23 @@ terminate called throwing an exception(lldb)</pre>
   
   <entry>
     <title type="html"><![CDATA[Twitter has an issue, let me tweet about it...]]></title>
-    <link href="http://jasonbosco.github.io/jasonbos/twitter-has-an-issue-let-me-tweet-about-it/"/>
+    <link href="http://jasonbos.co/twitter-has-an-issue-let-me-tweet-about-it/"/>
     <updated>2012-07-26T00:00:00-07:00</updated>
-    <id>http://jasonbosco.github.io/jasonbos/twitter-has-an-issue-let-me-tweet-about-it</id>
-    <content type="html"><![CDATA[<img src="http://jasonbosco.github.io/jasonbos/images/2012-07-26-twitter-has-an-issue-let-me-tweet-about-it/Screen_Shot_2012-07-26_at_10.21.45_AM.png">]]></content>
+    <id>http://jasonbos.co/twitter-has-an-issue-let-me-tweet-about-it</id>
+    <content type="html"><![CDATA[<img src="http://jasonbos.co/images/2012-07-26-twitter-has-an-issue-let-me-tweet-about-it/Screen_Shot_2012-07-26_at_10.21.45_AM.png">]]></content>
   </entry>
   
   <entry>
     <title type="html"><![CDATA[Facebook Login With Only Email and html7magic?]]></title>
-    <link href="http://jasonbosco.github.io/jasonbos/facebook-login-with-only-email-and-html7magic/"/>
+    <link href="http://jasonbos.co/facebook-login-with-only-email-and-html7magic/"/>
     <updated>2012-05-02T00:00:00-07:00</updated>
-    <id>http://jasonbosco.github.io/jasonbos/facebook-login-with-only-email-and-html7magic</id>
+    <id>http://jasonbos.co/facebook-login-with-only-email-and-html7magic</id>
     <content type="html"><![CDATA[<p>I happened to stumble on Carl&#8217;s Jr.&#8217;s Facebook page today and particularly on this post (for no particular reason, I
     should add):&nbsp;</p>
 <p><a href="http://www.facebook.com/91702965455/posts/10151579104835456" target="_blank">http://www.facebook.com/91702965455/posts/10151579104835456</a>
 </p>
 <p>
-    <img src="http://jasonbosco.github.io/jasonbos/images/2012-05-02-facebook-login-with-only-email-and-html7magic/Screen_Shot_2012-05-02_at_8.56.46_PM.png">
+    <img src="http://jasonbos.co/images/2012-05-02-facebook-login-with-only-email-and-html7magic/Screen_Shot_2012-05-02_at_8.56.46_PM.png">
 </p>
 
 <p>and I quickly noticed the login area on the top right. It only had an email field and a login button. (I was not
@@ -285,7 +285,7 @@ terminate called throwing an exception(lldb)</pre>
     to enter their password?</p>
 <p>And then I wondered if this was a CSS issue, and looked at the source code:&nbsp;
 <p>
-    <img src="http://jasonbosco.github.io/jasonbos/images/2012-05-02-facebook-login-with-only-email-and-html7magic/Screen_Shot_2012-05-02_at_8.56.46_PM_2.png">
+    <img src="http://jasonbos.co/images/2012-05-02-facebook-login-with-only-email-and-html7magic/Screen_Shot_2012-05-02_at_8.56.46_PM_2.png">
 </p>
 </p>
 <p>And I was able to confirm that it wasn&#8217;t a CSS issue causing the password field to be hidden. There wasn&#8217;t any input
@@ -297,9 +297,9 @@ terminate called throwing an exception(lldb)</pre>
   
   <entry>
     <title type="html"><![CDATA[Scribble joins the ranks of Evernote and Springpad on the Chrome Web Store!]]></title>
-    <link href="http://jasonbosco.github.io/jasonbos/scribble-joins-the-ranks-of-evernote-and-springpad-on-the-chrome-web-store/"/>
+    <link href="http://jasonbos.co/scribble-joins-the-ranks-of-evernote-and-springpad-on-the-chrome-web-store/"/>
     <updated>2012-04-18T00:00:00-07:00</updated>
-    <id>http://jasonbosco.github.io/jasonbos/scribble-joins-the-ranks-of-evernote-and-springpad-on-the-chrome-web-store</id>
+    <id>http://jasonbos.co/scribble-joins-the-ranks-of-evernote-and-springpad-on-the-chrome-web-store</id>
     <content type="html"><![CDATA[<p>I was curious how people casually browsing through the <a href="https://chrome.google.com/webstore" target="_blank">Chrome web store</a> would discover <a href="https://chrome.google.com/webstore/detail/offpaifnchmpbnjhjbhpdffahlofdkfb"
                                     target="_blank">Scribble</a>. And so I opened up the Chrome Web Store and browsed
     through the first few tile sets of apps on the home page. I didn&#8217;t find <a
@@ -324,7 +324,7 @@ terminate called throwing an exception(lldb)</pre>
     </li>
 </ul>
 <p><img
-        src="http://jasonbosco.github.io/jasonbos/images/2012-04-18-scribble-joins-the-ranks-of-evernote-and-springpad-on-the-chrome-web-store/Scribble_featured_on_chrome_web_store.png">
+        src="http://jasonbos.co/images/2012-04-18-scribble-joins-the-ranks-of-evernote-and-springpad-on-the-chrome-web-store/Scribble_featured_on_chrome_web_store.png">
 </p>
 
 <p>So that&#8217;s how people find out about Scribble!&nbsp;</p>
@@ -333,9 +333,9 @@ terminate called throwing an exception(lldb)</pre>
   
   <entry>
     <title type="html"><![CDATA[Scribble featured on PCWorld!]]></title>
-    <link href="http://jasonbosco.github.io/jasonbos/scribble-featured-on-pcworld/"/>
+    <link href="http://jasonbos.co/scribble-featured-on-pcworld/"/>
     <updated>2012-04-16T00:00:00-07:00</updated>
-    <id>http://jasonbosco.github.io/jasonbos/scribble-featured-on-pcworld</id>
+    <id>http://jasonbos.co/scribble-featured-on-pcworld</id>
     <content type="html"><![CDATA[<p>Exciting times as the number of Scribble users increases to 27,000! I wonder how many of those 27,000 users would pay
     for a pro-version of Scribble.</p>
 <blockquote>
@@ -360,9 +360,9 @@ terminate called throwing an exception(lldb)</pre>
   
   <entry>
     <title type="html"><![CDATA[Job Posting for Building Pixza]]></title>
-    <link href="http://jasonbosco.github.io/jasonbos/job-posting-for-building-pixza/"/>
+    <link href="http://jasonbos.co/job-posting-for-building-pixza/"/>
     <updated>2012-04-11T00:00:00-07:00</updated>
-    <id>http://jasonbosco.github.io/jasonbos/job-posting-for-building-pixza</id>
+    <id>http://jasonbos.co/job-posting-for-building-pixza</id>
     <content type="html"><![CDATA[<p>And so I was looking at the analytics for <a href="http://pixza.com/" target="_blank">Pixza</a>. There was a referral
     from gamedev.net. I was curious to find out where Pixza was mentioned on <a href="http//www.gamedev.net"
                                                                                 target="_blank">gamedev.net</a>.&nbsp;And
@@ -393,9 +393,9 @@ terminate called throwing an exception(lldb)</pre>
   
   <entry>
     <title type="html"><![CDATA[SO: git shows that I deleted all the files in my repo and staged them for commit after I did a git pull..]]></title>
-    <link href="http://jasonbosco.github.io/jasonbos/so-git-shows-that-i-deleted-all-the-files-in-my-repo-and-staged-them-for-commit-after-i-did-a-git-pull/"/>
+    <link href="http://jasonbos.co/so-git-shows-that-i-deleted-all-the-files-in-my-repo-and-staged-them-for-commit-after-i-did-a-git-pull/"/>
     <updated>2012-03-26T00:00:00-07:00</updated>
-    <id>http://jasonbosco.github.io/jasonbos/so-git-shows-that-i-deleted-all-the-files-in-my-repo-and-staged-them-for-commit-after-i-did-a-git-pull</id>
+    <id>http://jasonbos.co/so-git-shows-that-i-deleted-all-the-files-in-my-repo-and-staged-them-for-commit-after-i-did-a-git-pull</id>
     <content type="html"><![CDATA[<blockquote class="twitter-tweet">
     <p>git shows that I deleted all the files in my repo and staged them for commit after I did a git pull. Why? <a
             href="http://t.co/EewYLzkY" title="http://stackoverflow.com/q/9867957/123545?stw=2">stackoverflow.com/q/9867957/1235&hellip;</a>
@@ -407,9 +407,9 @@ terminate called throwing an exception(lldb)</pre>
   
   <entry>
     <title type="html"><![CDATA[Facebook Utility Value]]></title>
-    <link href="http://jasonbosco.github.io/jasonbos/facebook-utility-value/"/>
+    <link href="http://jasonbos.co/facebook-utility-value/"/>
     <updated>2012-03-05T00:00:00-08:00</updated>
-    <id>http://jasonbosco.github.io/jasonbos/facebook-utility-value</id>
+    <id>http://jasonbos.co/facebook-utility-value</id>
     <content type="html"><![CDATA[<p>3.30am</p>
 <p>Working on assignment</p>
 <p>Need to test code on nunki (USC server)&nbsp;</p>
@@ -439,9 +439,9 @@ terminate called throwing an exception(lldb)</pre>
   
   <entry>
     <title type="html"><![CDATA[DOS attack on a free service? Come on.]]></title>
-    <link href="http://jasonbosco.github.io/jasonbos/dos-attack-on-a-free-service-come-on/"/>
+    <link href="http://jasonbos.co/dos-attack-on-a-free-service-come-on/"/>
     <updated>2012-01-12T00:00:00-08:00</updated>
-    <id>http://jasonbosco.github.io/jasonbos/dos-attack-on-a-free-service-come-on</id>
+    <id>http://jasonbos.co/dos-attack-on-a-free-service-come-on</id>
     <content type="html"><![CDATA[<p>It&#8217;s incredibly frustrating when someone launches a DOS attack on a <span
         style="text-decoration: underline;"><strong>free</strong></span> service like <a
         href="https://chrome.google.com/webstore/detail/offpaifnchmpbnjhjbhpdffahlofdkfb/" target="_blank">Scribble</a>.
@@ -453,9 +453,9 @@ terminate called throwing an exception(lldb)</pre>
   
   <entry>
     <title type="html"><![CDATA[Prime Candidate For SQL Injection!]]></title>
-    <link href="http://jasonbosco.github.io/jasonbos/prime-candidate-for-sql-injection/"/>
+    <link href="http://jasonbos.co/prime-candidate-for-sql-injection/"/>
     <updated>2012-01-02T00:00:00-08:00</updated>
-    <id>http://jasonbosco.github.io/jasonbos/prime-candidate-for-sql-injection</id>
+    <id>http://jasonbos.co/prime-candidate-for-sql-injection</id>
     <content type="html"><![CDATA[<p>I happened to stumble on this site which embeds the SQL query in their URL!&nbsp;</p>
 <div class="CodeRay">
     <div class="code"><pre>http://www.s-cube-network.eu/refbase/search.php?
@@ -490,9 +490,9 @@ sqlQuery=SELECT%20author%2C%20title%2C%20type%2C%20year%2C%20publication%2C
   
   <entry>
     <title type="html"><![CDATA[Shifty: A Chrome Extension To Edit Any Webpage From Within The Browser]]></title>
-    <link href="http://jasonbosco.github.io/jasonbos/shifty-a-chrome-extension-to-edit-any-webpage-from-within-the-browser/"/>
+    <link href="http://jasonbos.co/shifty-a-chrome-extension-to-edit-any-webpage-from-within-the-browser/"/>
     <updated>2011-12-18T00:00:00-08:00</updated>
-    <id>http://jasonbosco.github.io/jasonbos/shifty-a-chrome-extension-to-edit-any-webpage-from-within-the-browser</id>
+    <id>http://jasonbos.co/shifty-a-chrome-extension-to-edit-any-webpage-from-within-the-browser</id>
     <content type="html"><![CDATA[<p>When&nbsp;<a href="http://kishorelive.com" target="_blank">Kishore</a> and I iterate over product designs, I often
     feel the need for a tool that will allow me to propose changes to a HTML mockup by simply clicking and dragging DOM
     elements from within the browser, instead of taking a screen shot of the page and editing the image.</p>
@@ -506,13 +506,13 @@ sqlQuery=SELECT%20author%2C%20title%2C%20type%2C%20year%2C%20publication%2C
 <p>Here are some screenshots of the extension in action:</p>
 <ol>
     <li><img
-            src="http://jasonbosco.github.io/jasonbos/images/2011-12-18-shifty-a-chrome-extension-to-edit-any-webpage-from-within-the-browser/Screen_Shot_2011-12-18_at_3.28.27_PM.png">
+            src="http://jasonbos.co/images/2011-12-18-shifty-a-chrome-extension-to-edit-any-webpage-from-within-the-browser/Screen_Shot_2011-12-18_at_3.28.27_PM.png">
     </li>
     <li><img
-            src="http://jasonbosco.github.io/jasonbos/images/2011-12-18-shifty-a-chrome-extension-to-edit-any-webpage-from-within-the-browser/Screen_Shot_2011-12-17_at_6.08.55_PM.png">
+            src="http://jasonbos.co/images/2011-12-18-shifty-a-chrome-extension-to-edit-any-webpage-from-within-the-browser/Screen_Shot_2011-12-17_at_6.08.55_PM.png">
     </li>
     <li><img
-            src="http://jasonbosco.github.io/jasonbos/images/2011-12-18-shifty-a-chrome-extension-to-edit-any-webpage-from-within-the-browser/Screen_Shot_2011-12-18_at_4.01.53_PM.png">
+            src="http://jasonbos.co/images/2011-12-18-shifty-a-chrome-extension-to-edit-any-webpage-from-within-the-browser/Screen_Shot_2011-12-18_at_4.01.53_PM.png">
     </li>
 </ol>
 
@@ -524,9 +524,9 @@ sqlQuery=SELECT%20author%2C%20title%2C%20type%2C%20year%2C%20publication%2C
   
   <entry>
     <title type="html"><![CDATA[Xkcd: SQL Injection]]></title>
-    <link href="http://jasonbosco.github.io/jasonbos/xkcd-sql-injection/"/>
+    <link href="http://jasonbos.co/xkcd-sql-injection/"/>
     <updated>2011-12-11T00:00:00-08:00</updated>
-    <id>http://jasonbosco.github.io/jasonbos/xkcd-sql-injection</id>
+    <id>http://jasonbos.co/xkcd-sql-injection</id>
     <content type="html"><![CDATA[<p><img src="http://imgs.xkcd.com/comics/exploits_of_a_mom.png" alt=""/></p>
 <p>Source: <a href="http://xkcd.com/327/">http://xkcd.com/327/</a></p>
 ]]></content>
@@ -534,9 +534,9 @@ sqlQuery=SELECT%20author%2C%20title%2C%20type%2C%20year%2C%20publication%2C
   
   <entry>
     <title type="html"><![CDATA[Fix: Slow Refresh Rate On Hyper-V console running Ubuntu 10.04 LTS]]></title>
-    <link href="http://jasonbosco.github.io/jasonbos/fix-slow-refresh-rate-on-hyper-v-console-running-ubuntu-10-04-lts/"/>
+    <link href="http://jasonbos.co/fix-slow-refresh-rate-on-hyper-v-console-running-ubuntu-10-04-lts/"/>
     <updated>2011-11-18T00:00:00-08:00</updated>
-    <id>http://jasonbosco.github.io/jasonbos/fix-slow-refresh-rate-on-hyper-v-console-running-ubuntu-10-04-lts</id>
+    <id>http://jasonbos.co/fix-slow-refresh-rate-on-hyper-v-console-running-ubuntu-10-04-lts</id>
     <content type="html"><![CDATA[<p>When I connect to a virtual machine running Ubuntu 10.04 LTS on Hyper-V, the refresh rate of the console used to be
     terribly slow. It would refresh the screen <strong>line by line</strong> with each line taking 1 second! It was
     painfully slow. So, all this while, I used <a href="http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html"
@@ -566,14 +566,14 @@ sqlQuery=SELECT%20author%2C%20title%2C%20type%2C%20year%2C%20publication%2C
   
   <entry>
     <title type="html"><![CDATA[An Old Design Of The Apple Online Store Still Live On Apple.com]]></title>
-    <link href="http://jasonbosco.github.io/jasonbos/an-old-design-of-the-apple-online-store-still-live-on-apple-com/"/>
+    <link href="http://jasonbos.co/an-old-design-of-the-apple-online-store-still-live-on-apple-com/"/>
     <updated>2011-11-18T00:00:00-08:00</updated>
-    <id>http://jasonbosco.github.io/jasonbos/an-old-design-of-the-apple-online-store-still-live-on-apple-com</id>
+    <id>http://jasonbos.co/an-old-design-of-the-apple-online-store-still-live-on-apple-com</id>
     <content type="html"><![CDATA[<p>Today I had a question for Apple Sales and I <a href="https://www.google.com/?q=apple%20live%20chat" target="_blank">googled</a>
     for &#8220;apple live chat&#8221;. The third link in my search results pointed to this page:&nbsp;<a
             href="http://www.apple.com/r/store/livechat/" target="_blank">http://www.apple.com/r/store/livechat/</a>&nbsp;-
     &#8220;Apple Store - Live Chat&#8221;.&nbsp;<img
-            src="http://jasonbosco.github.io/jasonbos/images/2011-11-18-an-old-design-of-the-apple-online-store-still-live-on-apple-com/Screen_Shot_2011-11-18_at_4.25.22_PM.png"/>
+            src="http://jasonbos.co/images/2011-11-18-an-old-design-of-the-apple-online-store-still-live-on-apple-com/Screen_Shot_2011-11-18_at_4.25.22_PM.png"/>
 </p>
 <p>It looks like it is an old page just lying around on apple.com. Ah the classic &#8220;Mac look&#8221; back in the day. It
     reminded me of the first time I saw a Mac at a design studio in a digital press when I was in 8th grade.&nbsp;</p>
@@ -584,9 +584,9 @@ sqlQuery=SELECT%20author%2C%20title%2C%20type%2C%20year%2C%20publication%2C
   
   <entry>
     <title type="html"><![CDATA[JSON Formatter]]></title>
-    <link href="http://jasonbosco.github.io/jasonbos/json-formatter/"/>
+    <link href="http://jasonbos.co/json-formatter/"/>
     <updated>2011-11-10T00:00:00-08:00</updated>
-    <id>http://jasonbosco.github.io/jasonbos/json-formatter</id>
+    <id>http://jasonbos.co/json-formatter</id>
     <content type="html"><![CDATA[<p>This is a handy tool that I use to pretty-print JSON especially when I&#8217;m working with APIs:</p>
 <p><a href="http://www.bodurov.com/JsonFormatter/">http://www.bodurov.com/JsonFormatter/</a></p>
 ]]></content>
@@ -594,9 +594,9 @@ sqlQuery=SELECT%20author%2C%20title%2C%20type%2C%20year%2C%20publication%2C
   
   <entry>
     <title type="html"><![CDATA[MySQL: Updating Multiple Columns When Using Select]]></title>
-    <link href="http://jasonbosco.github.io/jasonbos/mysql-updating-multiple-columns-when-using-select/"/>
+    <link href="http://jasonbos.co/mysql-updating-multiple-columns-when-using-select/"/>
     <updated>2011-11-08T00:00:00-08:00</updated>
-    <id>http://jasonbosco.github.io/jasonbos/mysql-updating-multiple-columns-when-using-select</id>
+    <id>http://jasonbos.co/mysql-updating-multiple-columns-when-using-select</id>
     <content type="html"><![CDATA[<p>I&#8217;ve always wanted to do something like this:</p>
 <div class="CodeRay">
     <div class="code">

@@ -1,4 +1,4 @@
 User-agent: *
 Disallow: 
 
-Sitemap: http://jasonbosco.github.io/jasonbos/sitemap.xml 
+Sitemap: http://jasonbos.co/sitemap.xml 
