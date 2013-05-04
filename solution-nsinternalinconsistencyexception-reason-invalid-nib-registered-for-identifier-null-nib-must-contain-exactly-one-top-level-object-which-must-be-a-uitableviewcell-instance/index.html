@@ -1,0 +1,302 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Solution: 'NSInternalInconsistencyException', reason: 'invalid nib registered for identifier ((null)) - nib must contain exactly one top level object which must be a UITableViewCell instance' - Jason Bosco</title>
+  <meta name="author" content="Jason Bosco">
+
+  
+  <meta name="description" content="This seems pretty obvious now that I know it but my Google fu failed me on this one, so I thought I&#8217;ll add a note about it should someone &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://jasonbosco.github.io/jasonbos/solution-nsinternalinconsistencyexception-reason-invalid-nib-registered-for-identifier-null-nib-must-contain-exactly-one-top-level-object-which-must-be-a-uitableviewcell-instance">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Jason Bosco" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/lib/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-23356655-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Jason Bosco</a></h1>
+  
+    <h2>Full Stack Web Developer ; Generalist</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:jasonbosco.github.io/jasonbos" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Solution: 'NSInternalInconsistencyException', Reason: 'Invalid Nib Registered for Identifier ((Null)) - Nib Must Contain Exactly One Top Level Object Which Must Be a UITableViewCell Instance'</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-08-15T00:00:00-07:00" pubdate data-updated="true">Aug 15<span>th</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>This seems pretty obvious now that I know it but my Google fu failed me on this one, so I thought I&#8217;ll add a note
+    about it should someone encounterthis issue. I was working with the TableViewController and my app would crash with
+    this error:</p>
+<div class="CodeRay">
+    <div class="code"><pre>2012-08-15 19:59:43.706 transcribe-ios[42544:10703] Missing proxy for identifier UpstreamPlaceholder-13
+2012-08-15 19:59:43.707 transcribe-ios[42544:10703] *** Assertion failure in -[UITableView dequeueReusableCellWithIdentifier:], /SourceCache/UIKit_Sim/UIKit-1914.84/UITableView.m:4118
+2012-08-15 19:59:43.707 transcribe-ios[42544:10703] *** Terminating app due to uncaught exception 'NSInternalInconsistencyException', reason: 'invalid nib registered for identifier ((null)) - nib must contain exactly one top level object which must be a UITableViewCell instance'
+*** First throw call stack:
+(0x1990022 0x2990cd6 0x1938a48 0xc132cb 0x30f316 0x12191 0x316c54 0x3173ce 0x302cbd 0x3116f1 0x2bad42 0x1991e42 0x24e5679 0x24ef579 0x24744f7 0x24763f6 0x2503160 0x28cf30 0x196499e 0x18fb640 0x18c74c6 0x18c6d84 0x18c6c9b 0x2f297d8 0x2f2988a 0x27c626 0x1e9d 0x1e05 0x1)
+terminate called throwing an exception(lldb)</pre>
+    </div>
+</div>
+
+<p>I&#8217;m using a StoryBoard and the issue is that I had more than one prototype cell visible in the table view. The error
+    says that there is more than 1 cell with the same
+    Identifier:
+<p>
+    <img src="/images/2012-08-15-solution-nsinternalinconsistencyexception-reason-invalid-nib-registered-for-identifier-null-nib-must-contain-exactly-one-top-level-object-which-must-be-a-uitableviewcell-instance/Screen_Shot_2012-08-15_at_8.04.27_PM.png">
+</p>
+<p>
+    <img src="/images/2012-08-15-solution-nsinternalinconsistencyexception-reason-invalid-nib-registered-for-identifier-null-nib-must-contain-exactly-one-top-level-object-which-must-be-a-uitableviewcell-instance/Screen_Shot_2012-08-15_at_8.07.24_PM.png">
+</p>
+
+<p>The solution is to set the number of Prototype Cells to the actual number of different types of cells you have (the
+    &#8216;type&#8217; being identified by the &#8216;identifier&#8217;). In my case, I just had 1 type of cell and so I set the number of
+    Prototype Cells to 1.</p>
+<p>
+    <img src="/images/2012-08-15-solution-nsinternalinconsistencyexception-reason-invalid-nib-registered-for-identifier-null-nib-must-contain-exactly-one-top-level-object-which-must-be-a-uitableviewcell-instance/Screen_Shot_2012-08-15_at_8.14.22_PM.png">
+</p></div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Jason Bosco</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-08-15T00:00:00-07:00" pubdate data-updated="true">Aug 15<span>th</span>, 2012</time>
+      
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://jasonbosco.github.io/jasonbos/solution-nsinternalinconsistencyexception-reason-invalid-nib-registered-for-identifier-null-nib-must-contain-exactly-one-top-level-object-which-must-be-a-uitableviewcell-instance/" data-via="jasonbosco" data-counturl="http://jasonbosco.github.io/jasonbos/solution-nsinternalinconsistencyexception-reason-invalid-nib-registered-for-identifier-null-nib-must-contain-exactly-one-top-level-object-which-must-be-a-uitableviewcell-instance/" >Tweet</a>
+  
+  
+  <div class="g-plusone" data-size="medium"></div>
+  
+  
+    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/our-tool-transcribe-is-featured-on-thenextweb/" title="Previous Post: Our Tool "Transcribe" is featured on TheNextWeb">&laquo; Our Tool "Transcribe" is featured on TheNextWeb</a>
+      
+      
+        <a class="basic-alignment right" href="/two-timestamp-columns-in-mysql/" title="Next Post: Two Timestamp Columns in MySQL">Two Timestamp Columns in MySQL &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/our-first-techcrunch-article/">Our First TechCrunch Article</a>
+      </li>
+    
+      <li class="post">
+        <a href="/transcribe-featured-on-thenextweb-again-35-of-the-best-productivity-and-lifehack-apps-of-2012/">Transcribe featured on TheNextWeb again: 35 of the best productivity and lifehack apps of 2012</a>
+      </li>
+    
+      <li class="post">
+        <a href="/two-timestamp-columns-in-mysql/">Two Timestamp Columns in MySQL</a>
+      </li>
+    
+      <li class="post">
+        <a href="/solution-nsinternalinconsistencyexception-reason-invalid-nib-registered-for-identifier-null-nib-must-contain-exactly-one-top-level-object-which-must-be-a-uitableviewcell-instance/">Solution: 'NSInternalInconsistencyException', reason: 'invalid nib registered for identifier ((null)) - nib must contain exactly one top level object which must be a UITableViewCell instance'</a>
+      </li>
+    
+      <li class="post">
+        <a href="/our-tool-transcribe-is-featured-on-thenextweb/">Our Tool "Transcribe" is featured on TheNextWeb</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/jasonbosco">@jasonbosco</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'jasonbosco',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2013 - Jason Bosco -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id; js.async = true;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+      script.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+    })();
+  </script>
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

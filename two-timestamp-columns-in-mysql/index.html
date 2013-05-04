@@ -1,0 +1,418 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Two Timestamp Columns in MySQL - Jason Bosco</title>
+  <meta name="author" content="Jason Bosco">
+
+  
+  <meta name="description" content="CREATE TABLE `test_table` (
+`id` INT( 10 ) NOT NULL,
+`created_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+`updated_at` TIMESTAMP NOT NULL &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://jasonbosco.github.io/jasonbos/two-timestamp-columns-in-mysql">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Jason Bosco" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/lib/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-23356655-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Jason Bosco</a></h1>
+  
+    <h2>Full Stack Web Developer ; Generalist</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:jasonbosco.github.io/jasonbos" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Two Timestamp Columns in MySQL</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-09-09T00:00:00-07:00" pubdate data-updated="true">Sep 9<span>th</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><div class="CodeRay">
+    <div class="code"><pre>CREATE TABLE `test_table` (
+`id` INT( 10 ) NOT NULL,
+`created_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+`updated_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE = INNODB;</pre>
+    </div>
+</div>
+
+<p>That should be simple right? Apparently not:</p>
+<div class="CodeRay">
+    <div class="code">
+        <pre>Incorrect table definition; there can be only one TIMESTAMP column with CURRENT_TIMESTAMP in DEFAULT or ON UPDATE clause</pre>
+    </div>
+</div>
+
+<p>I can use CURRENT_TIMESTAMP in only one place in the table. So I can&#8217;t have MySQL do what I intended it to do -
+    maintain two timestamps, one to store the record creation timestamp and another to store record update timestamp. So
+    I thought I&#8217;ll maintain those two timestamps by myself in the app. Give me two simple TIMESTAMP fields:</p>
+<div class="CodeRay">
+    <div class="code"><pre>CREATE TABLE `test_table` (
+`id` INT( 10 ) NOT NULL,
+`created_at` TIMESTAMP NOT NULL,
+`updated_at` TIMESTAMP NOT NULL
+) ENGINE = INNODB;</pre>
+    </div>
+</div>
+
+<ol>
+    <li><img src="/images/2012-09-09-two-timestamp-columns-in-mysql/Screen_Shot_2012-09-10_at_12.06.29_AM.png"></li>
+</ol>
+
+<p>MySQL automatically set the first timestamp field to DEFAULT to CURRENT_TIMESTAMP and ON UPDATE to CURRENT_TIMESTAMP.
+    The second timestamp field was set to DEFAULT to 0. That was indeed strange.</p>
+<p>I thought I found a bug in MySQL. But no, it turns out it is actually a feature! Actually, it&#8217;s a result of a
+    combination of features:</p>
+<ul>
+    <li>&#8220;<span
+            style="font-family: Helvetica, Arial, sans-serif; font-size: 14px; line-height: 25px;">With neither&nbsp;</span><code
+            class="literal"
+            style="margin: 0px; padding: 0px; border: 0px; vertical-align: baseline; background-color: white; color: #026789; font-weight: bold; font-family: Courier New, Courier, fixed, monospace; line-height: 25px;">DEFAULT
+        CURRENT_TIMESTAMP</code><span
+            style="font-family: Helvetica, Arial, sans-serif; font-size: 14px; line-height: 25px;">&nbsp;nor&nbsp;</span><code
+            class="literal"
+            style="margin: 0px; padding: 0px; border: 0px; vertical-align: baseline; background-color: white; color: #026789; font-weight: bold; font-family: Courier New, Courier, fixed, monospace; line-height: 25px;">ON
+        UPDATE CURRENT_TIMESTAMP</code><span
+            style="font-family: Helvetica, Arial, sans-serif; font-size: 14px; line-height: 25px;">, it is the same as specifying both&nbsp;</span><code
+            class="literal"
+            style="margin: 0px; padding: 0px; border: 0px; vertical-align: baseline; background-color: white; color: #026789; font-weight: bold; font-family: Courier New, Courier, fixed, monospace; line-height: 25px;">DEFAULT
+        CURRENT_TIMESTAMP</code><span
+            style="font-family: Helvetica, Arial, sans-serif; font-size: 14px; line-height: 25px;">&nbsp;and&nbsp;</span><code
+            class="literal"
+            style="margin: 0px; padding: 0px; border: 0px; vertical-align: baseline; background-color: white; color: #026789; font-weight: bold; font-family: Courier New, Courier, fixed, monospace; line-height: 25px;">ON
+        UPDATE CURRENT_TIMESTAMP</code><span
+            style="font-family: Helvetica, Arial, sans-serif; font-size: 14px; line-height: 25px;">.</span>&#8221;
+    </li>
+    <li>&#8220;<span style="font-family: Helvetica, Arial, sans-serif; font-size: 14px; line-height: 25px;">It need not be the first&nbsp;</span><a
+            href="http://dev.mysql.com/doc/refman/5.0/en/datetime.html"
+            title="11.1.5.1.&nbsp;The DATE, DATETIME, and TIMESTAMP Types" class="link"
+            style="margin: 0px; padding: 0px; border: 0px; font-size: 14px; vertical-align: baseline; color: #015a84; font-family: Helvetica, Arial, sans-serif; line-height: 25px;"><code
+            class="literal"
+            style="margin: 0px; padding: 0px; border: 0px; font-size: 13px; vertical-align: baseline; background-color: white; color: #026789; font-weight: bold; font-family: Courier New, Courier, fixed, monospace;">TIMESTAMP</code></a><span
+            style="font-family: Helvetica, Arial, sans-serif; font-size: 14px; line-height: 25px;">&nbsp;column in a table that is automatically initialized or updated to the current timestamp. However, to specify automatic initialization or updating for a different&nbsp;</span><a
+            href="http://dev.mysql.com/doc/refman/5.0/en/datetime.html"
+            title="11.1.5.1.&nbsp;The DATE, DATETIME, and TIMESTAMP Types" class="link"
+            style="margin: 0px; padding: 0px; border: 0px; font-size: 14px; vertical-align: baseline; color: #015a84; font-family: Helvetica, Arial, sans-serif; line-height: 25px;"><code
+            class="literal"
+            style="margin: 0px; padding: 0px; border: 0px; font-size: 13px; vertical-align: baseline; background-color: white; color: #026789; font-weight: bold; font-family: Courier New, Courier, fixed, monospace;">TIMESTAMP</code></a><span
+            style="font-family: Helvetica, Arial, sans-serif; font-size: 14px; line-height: 25px;">&nbsp;column, you must suppress the automatic properties for the first one. Then, for the other&nbsp;</span><a
+            href="http://dev.mysql.com/doc/refman/5.0/en/datetime.html"
+            title="11.1.5.1.&nbsp;The DATE, DATETIME, and TIMESTAMP Types" class="link"
+            style="margin: 0px; padding: 0px; border: 0px; font-size: 14px; vertical-align: baseline; color: #015a84; font-family: Helvetica, Arial, sans-serif; line-height: 25px;"><code
+            class="literal"
+            style="margin: 0px; padding: 0px; border: 0px; font-size: 13px; vertical-align: baseline; background-color: white; color: #026789; font-weight: bold; font-family: Courier New, Courier, fixed, monospace;">TIMESTAMP</code></a><span
+            style="font-family: Helvetica, Arial, sans-serif; font-size: 14px; line-height: 25px;">&nbsp;column, the rules for the&nbsp;</span><code
+            class="literal"
+            style="margin: 0px; padding: 0px; border: 0px; vertical-align: baseline; background-color: white; color: #026789; font-weight: bold; font-family: Courier New, Courier, fixed, monospace; line-height: 25px;">DEFAULT</code><span
+            style="font-family: Helvetica, Arial, sans-serif; font-size: 14px; line-height: 25px;">&nbsp;and&nbsp;</span><code
+            class="literal"
+            style="margin: 0px; padding: 0px; border: 0px; vertical-align: baseline; background-color: white; color: #026789; font-weight: bold; font-family: Courier New, Courier, fixed, monospace; line-height: 25px;">ON
+        UPDATE</code><span style="font-family: Helvetica, Arial, sans-serif; font-size: 14px; line-height: 25px;">&nbsp;clauses are the same as for the first&nbsp;</span><a
+            href="http://dev.mysql.com/doc/refman/5.0/en/datetime.html"
+            title="11.1.5.1.&nbsp;The DATE, DATETIME, and TIMESTAMP Types" class="link"
+            style="margin: 0px; padding: 0px; border: 0px; font-size: 14px; vertical-align: baseline; color: #015a84; font-family: Helvetica, Arial, sans-serif; line-height: 25px;"><code
+            class="literal"
+            style="margin: 0px; padding: 0px; border: 0px; font-size: 13px; vertical-align: baseline; background-color: white; color: #026789; font-weight: bold; font-family: Courier New, Courier, fixed, monospace;">TIMESTAMP</code></a><span
+            style="font-family: Helvetica, Arial, sans-serif; font-size: 14px; line-height: 25px;">&nbsp;column, except that if you omit both clauses, no automatic initialization or updating occurs.</span>&#8221;
+    </li>
+</ul>
+<p>Infering from the above two points from the MySQL manual, if there are two (or more) TIMESTAMP fileds in a table with
+    no DEFAULT and ON UPDATE clauses specified, MySQL automatically defaults the first timestamp field to have a DEFAULT
+    CURRENT_TIMESTAMP and an ON UPDATE CURRENT_TIMESTAMP field and the rest of the timestamp fields to have a DEFAULT 0.&nbsp;</p>
+<p>Now coming back to the problem at hand, I need to track the creation and update timestamps of a record. This can be
+    achieved using another feature:</p>
+<ul>
+    <li><span
+            style="font-family: Helvetica, Arial, sans-serif; font-size: 14px; line-height: 25px;">By default,&nbsp;</span><a
+            href="http://dev.mysql.com/doc/refman/5.0/en/datetime.html"
+            title="11.1.5.1.&nbsp;The DATE, DATETIME, and TIMESTAMP Types" class="link"
+            style="margin: 0px; padding: 0px; border: 0px; font-size: 14px; vertical-align: baseline; color: #015a84; font-family: Helvetica, Arial, sans-serif; line-height: 25px;"><code
+            class="literal"
+            style="margin: 0px; padding: 0px; border: 0px; font-size: 13px; vertical-align: baseline; background-color: white; color: #026789; font-weight: bold; font-family: Courier New, Courier, fixed, monospace;">TIMESTAMP</code></a><span
+            style="font-family: Helvetica, Arial, sans-serif; font-size: 14px; line-height: 25px;">&nbsp;columns are&nbsp;</span><code
+            class="literal"
+            style="margin: 0px; padding: 0px; border: 0px; vertical-align: baseline; background-color: white; color: #026789; font-weight: bold; font-family: Courier New, Courier, fixed, monospace; line-height: 25px;">NOT
+        NULL</code><span style="font-family: Helvetica, Arial, sans-serif; font-size: 14px; line-height: 25px;">, cannot contain&nbsp;</span><code
+            class="literal"
+            style="margin: 0px; padding: 0px; border: 0px; vertical-align: baseline; background-color: white; color: #026789; font-weight: bold; font-family: Courier New, Courier, fixed, monospace; line-height: 25px;">NULL</code><span
+            style="font-family: Helvetica, Arial, sans-serif; font-size: 14px; line-height: 25px;">&nbsp;values, and assigning&nbsp;</span><code
+            class="literal"
+            style="margin: 0px; padding: 0px; border: 0px; vertical-align: baseline; background-color: white; color: #026789; font-weight: bold; font-family: Courier New, Courier, fixed, monospace; line-height: 25px;">NULL</code><span
+            style="font-family: Helvetica, Arial, sans-serif; font-size: 14px; line-height: 25px;">&nbsp;assigns the current timestamp.</span>
+    </li>
+</ul>
+<p>So if I assign a NULL value to a NOT NULL TIMESTAMP field, it uses the current timestamp value instead! And that&#8217;ll
+    be my created_at field. The updated_at TIMESTAMP field can have DEFAULT CURRENT_TIMESTAMP and an ON UPDATE
+    CURRENT_TIMESTAMP to track the update time. So just to keep it a little more obvious I now use the following CREATE
+    TABLE:</p>
+<div class="CodeRay">
+    <div class="code"><pre>CREATE TABLE `test_table` (
+`id` INT( 10 ) NOT NULL,
+`created_at` TIMESTAMP NOT NULL DEFAULT 0,
+`updated_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE = INNODB;</pre>
+    </div>
+</div>
+
+<p>The corresponding INSERT statment will be:</p>
+<p>References:</p>
+<ul>
+    <li><a href="http://stackoverflow.com/questions/4851672/one-mysql-table-with-multiple-timestamp-columns"
+           target="_blank">http://stackoverflow.com/questions/4851672/one-mysql-table-with-multiple-timestamp-columns</a>
+    </li>
+    <li><a href="http://dev.mysql.com/doc/refman/5.0/en/timestamp-initialization.html" target="_blank">http://dev.mysql.com/doc/refman/5.0/en/timestamp-initialization.html</a>
+    </li>
+</ul>
+<div class="CodeRay">
+    <div class="code">
+        <pre>INSERT INTO test_table (id, created_at, updated_at) VALUES (1, NULL, NULL);</pre>
+    </div>
+</div>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Jason Bosco</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-09-09T00:00:00-07:00" pubdate data-updated="true">Sep 9<span>th</span>, 2012</time>
+      
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://jasonbosco.github.io/jasonbos/two-timestamp-columns-in-mysql/" data-via="jasonbosco" data-counturl="http://jasonbosco.github.io/jasonbos/two-timestamp-columns-in-mysql/" >Tweet</a>
+  
+  
+  <div class="g-plusone" data-size="medium"></div>
+  
+  
+    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/solution-nsinternalinconsistencyexception-reason-invalid-nib-registered-for-identifier-null-nib-must-contain-exactly-one-top-level-object-which-must-be-a-uitableviewcell-instance/" title="Previous Post: Solution: 'NSInternalInconsistencyException', reason: 'invalid nib registered for identifier ((null)) - nib must contain exactly one top level object which must be a UITableViewCell instance'">&laquo; Solution: 'NSInternalInconsistencyException', reason: 'invalid nib registered for identifier ((null)) - nib must contain exactly one top level object which must be a UITableViewCell instance'</a>
+      
+      
+        <a class="basic-alignment right" href="/transcribe-featured-on-thenextweb-again-35-of-the-best-productivity-and-lifehack-apps-of-2012/" title="Next Post: Transcribe featured on TheNextWeb again: 35 of the best productivity and lifehack apps of 2012">Transcribe featured on TheNextWeb again: 35 of the best productivity and lifehack apps of 2012 &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/our-first-techcrunch-article/">Our First TechCrunch Article</a>
+      </li>
+    
+      <li class="post">
+        <a href="/transcribe-featured-on-thenextweb-again-35-of-the-best-productivity-and-lifehack-apps-of-2012/">Transcribe featured on TheNextWeb again: 35 of the best productivity and lifehack apps of 2012</a>
+      </li>
+    
+      <li class="post">
+        <a href="/two-timestamp-columns-in-mysql/">Two Timestamp Columns in MySQL</a>
+      </li>
+    
+      <li class="post">
+        <a href="/solution-nsinternalinconsistencyexception-reason-invalid-nib-registered-for-identifier-null-nib-must-contain-exactly-one-top-level-object-which-must-be-a-uitableviewcell-instance/">Solution: 'NSInternalInconsistencyException', reason: 'invalid nib registered for identifier ((null)) - nib must contain exactly one top level object which must be a UITableViewCell instance'</a>
+      </li>
+    
+      <li class="post">
+        <a href="/our-tool-transcribe-is-featured-on-thenextweb/">Our Tool "Transcribe" is featured on TheNextWeb</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/jasonbosco">@jasonbosco</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'jasonbosco',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2013 - Jason Bosco -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id; js.async = true;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+      script.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+    })();
+  </script>
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

@@ -1,195 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
 
-<!DOCTYPE html>
-<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
-<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
-<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
-<head>
-  <meta charset="utf-8">
-  <title>Jason Bosco</title>
-  <meta name="author" content="Jason Bosco">
-
-  
-  <meta name="description" content="Say hello to codassium.com that <a href="http://www.kishorelive.com" target="_blank">Kishore and I are working on. It&#8217;s been quite a remarkable &hellip;">
-  
-
-  <!-- http://t.co/dKP3o1e -->
-  <meta name="HandheldFriendly" content="True">
-  <meta name="MobileOptimized" content="320">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title><![CDATA[Jason Bosco]]></title>
+  <link href="http://jasonbosco.github.io/jasonbos/atom.xml" rel="self"/>
+  <link href="http://jasonbosco.github.io/jasonbos/"/>
+  <updated>2013-05-03T20:48:30-07:00</updated>
+  <id>http://jasonbosco.github.io/jasonbos/</id>
+  <author>
+    <name><![CDATA[Jason Bosco]]></name>
+    <email><![CDATA[jb@jbos.co]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
 
   
-  <link rel="canonical" href="http://jasonbosco.github.io/jasonbos">
-  <link href="/favicon.png" rel="icon">
-  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
-  <link href="/atom.xml" rel="alternate" title="Jason Bosco" type="application/atom+xml">
-  <script src="/javascripts/modernizr-2.0.js"></script>
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/lib/jquery.min.js"%3E%3C/script%3E'))</script>
-  <script src="/javascripts/octopress.js" type="text/javascript"></script>
-  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
-<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
-<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
-
-  
-  <script type="text/javascript">
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-23356655-1']);
-    _gaq.push(['_trackPageview']);
-
-    (function() {
-      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-    })();
-  </script>
-
-
-</head>
-
-<body   >
-  <header role="banner"><hgroup>
-  <h1><a href="/">Jason Bosco</a></h1>
-  
-    <h2>Full Stack Web Developer ; Generalist</h2>
-  
-</hgroup>
-
-</header>
-  <nav role="navigation"><ul class="subscription" data-subscription="rss">
-  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
-  
-</ul>
-  
-<form action="http://google.com/search" method="get">
-  <fieldset role="search">
-    <input type="hidden" name="q" value="site:jasonbosco.github.io/jasonbos" />
-    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
-  </fieldset>
-</form>
-  
-<ul class="main-navigation">
-  <li><a href="/">Blog</a></li>
-  <li><a href="/blog/archives">Archives</a></li>
-</ul>
-
-</nav>
-  <div id="main">
-    <div id="content">
-      <div class="blog-index">
-  
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/our-first-techcrunch-article/">Our First TechCrunch Article</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-04-11T00:00:00-07:00" pubdate data-updated="true">Apr 11<span>th</span>, 2013</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Say hello to <a href="http://codassium.com" target="_blank">codassium.com</a> that <a
+  <entry>
+    <title type="html"><![CDATA[Our First TechCrunch Article]]></title>
+    <link href="http://jasonbosco.github.io/jasonbos/our-first-techcrunch-article/"/>
+    <updated>2013-04-11T00:00:00-07:00</updated>
+    <id>http://jasonbosco.github.io/jasonbos/our-first-techcrunch-article</id>
+    <content type="html"><![CDATA[<p>Say hello to <a href="http://codassium.com" target="_blank">codassium.com</a> that <a
         href="http://www.kishorelive.com" target="_blank">Kishore</a> and I are working on. It&#8217;s been quite a remarkable
     experience - we made it to the front page of <a href="https://news.ycombinator.com/item?id=5493634" target="_blank">HN</a>&nbsp;on
     launch and a week later we&#8217;ve been featured on TechCrunch :&nbsp;<a
             href="http://techcrunch.com/2013/04/10/hiring-developers-codassium-mashes-up-a-collaborative-code-editor-with-real-time-video-chat/">http://techcrunch.com/2013/04/10/hiring-developers-codassium-mashes-up-a-coll&#8230;</a>
 </p>
 
-<p><img src="/images/2013-04-11-our-first-techcrunch-article/Screen_Shot_2013-04-11_at_12.47.58_AM.png"></p>
+<p><img src="http://jasonbosco.github.io/jasonbos/images/2013-04-11-our-first-techcrunch-article/Screen_Shot_2013-04-11_at_12.47.58_AM.png"></p>
 
 <p>Exciting times!&nbsp;</p>
-</div>
+]]></content>
+  </entry>
   
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/transcribe-featured-on-thenextweb-again-35-of-the-best-productivity-and-lifehack-apps-of-2012/">Transcribe Featured on TheNextWeb Again: 35 of the Best Productivity and Lifehack Apps of 2012</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-01-05T00:00:00-08:00" pubdate data-updated="true">Jan 5<span>th</span>, 2013</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Quite an honor to be featured on TheNextWeb as one of the best productvity apps of 2012:&nbsp;<a
+  <entry>
+    <title type="html"><![CDATA[Transcribe featured on TheNextWeb again: 35 of the best productivity and lifehack apps of 2012]]></title>
+    <link href="http://jasonbosco.github.io/jasonbos/transcribe-featured-on-thenextweb-again-35-of-the-best-productivity-and-lifehack-apps-of-2012/"/>
+    <updated>2013-01-05T00:00:00-08:00</updated>
+    <id>http://jasonbosco.github.io/jasonbos/transcribe-featured-on-thenextweb-again-35-of-the-best-productivity-and-lifehack-apps-of-2012</id>
+    <content type="html"><![CDATA[<p>Quite an honor to be featured on TheNextWeb as one of the best productvity apps of 2012:&nbsp;<a
         href="http://thenextweb.com/apps/2012/12/20/35-best-productivity-apps-of-2012/5/">http://thenextweb.com/apps/2012/12/20/35-best-productivity-apps-of-2012/5/</a>
 </p>
-</div>
+]]></content>
+  </entry>
   
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/two-timestamp-columns-in-mysql/">Two Timestamp Columns in MySQL</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-09-09T00:00:00-07:00" pubdate data-updated="true">Sep 9<span>th</span>, 2012</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><div class="CodeRay">
+  <entry>
+    <title type="html"><![CDATA[Two Timestamp Columns in MySQL]]></title>
+    <link href="http://jasonbosco.github.io/jasonbos/two-timestamp-columns-in-mysql/"/>
+    <updated>2012-09-09T00:00:00-07:00</updated>
+    <id>http://jasonbosco.github.io/jasonbos/two-timestamp-columns-in-mysql</id>
+    <content type="html"><![CDATA[<div class="CodeRay">
     <div class="code"><pre>CREATE TABLE `test_table` (
 `id` INT( 10 ) NOT NULL,
 `created_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -218,7 +76,7 @@
 </div>
 
 <ol>
-    <li><img src="/images/2012-09-09-two-timestamp-columns-in-mysql/Screen_Shot_2012-09-10_at_12.06.29_AM.png"></li>
+    <li><img src="http://jasonbosco.github.io/jasonbos/images/2012-09-09-two-timestamp-columns-in-mysql/Screen_Shot_2012-09-10_at_12.06.29_AM.png"></li>
 </ol>
 
 <p>MySQL automatically set the first timestamp field to DEFAULT to CURRENT_TIMESTAMP and ON UPDATE to CURRENT_TIMESTAMP.
@@ -330,42 +188,15 @@
         <pre>INSERT INTO test_table (id, created_at, updated_at) VALUES (1, NULL, NULL);</pre>
     </div>
 </div>
-</div>
+]]></content>
+  </entry>
   
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/solution-nsinternalinconsistencyexception-reason-invalid-nib-registered-for-identifier-null-nib-must-contain-exactly-one-top-level-object-which-must-be-a-uitableviewcell-instance/">Solution: &#8216;NSInternalInconsistencyException&#8217;, Reason: &#8216;Invalid Nib Registered for Identifier ((Null)) - Nib Must Contain Exactly One Top Level Object Which Must Be a UITableViewCell Instance&#8217;</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-08-15T00:00:00-07:00" pubdate data-updated="true">Aug 15<span>th</span>, 2012</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>This seems pretty obvious now that I know it but my Google fu failed me on this one, so I thought I&#8217;ll add a note
+  <entry>
+    <title type="html"><![CDATA[Solution: 'NSInternalInconsistencyException', reason: 'invalid nib registered for identifier ((null)) - nib must contain exactly one top level object which must be a UITableViewCell instance']]></title>
+    <link href="http://jasonbosco.github.io/jasonbos/solution-nsinternalinconsistencyexception-reason-invalid-nib-registered-for-identifier-null-nib-must-contain-exactly-one-top-level-object-which-must-be-a-uitableviewcell-instance/"/>
+    <updated>2012-08-15T00:00:00-07:00</updated>
+    <id>http://jasonbosco.github.io/jasonbos/solution-nsinternalinconsistencyexception-reason-invalid-nib-registered-for-identifier-null-nib-must-contain-exactly-one-top-level-object-which-must-be-a-uitableviewcell-instance</id>
+    <content type="html"><![CDATA[<p>This seems pretty obvious now that I know it but my Google fu failed me on this one, so I thought I&#8217;ll add a note
     about it should someone encounterthis issue. I was working with the TableViewController and my app would crash with
     this error:</p>
 <div class="CodeRay">
@@ -382,53 +213,26 @@ terminate called throwing an exception(lldb)</pre>
     says that there is more than 1 cell with the same
     Identifier:
 <p>
-    <img src="/images/2012-08-15-solution-nsinternalinconsistencyexception-reason-invalid-nib-registered-for-identifier-null-nib-must-contain-exactly-one-top-level-object-which-must-be-a-uitableviewcell-instance/Screen_Shot_2012-08-15_at_8.04.27_PM.png">
+    <img src="http://jasonbosco.github.io/jasonbos/images/2012-08-15-solution-nsinternalinconsistencyexception-reason-invalid-nib-registered-for-identifier-null-nib-must-contain-exactly-one-top-level-object-which-must-be-a-uitableviewcell-instance/Screen_Shot_2012-08-15_at_8.04.27_PM.png">
 </p>
 <p>
-    <img src="/images/2012-08-15-solution-nsinternalinconsistencyexception-reason-invalid-nib-registered-for-identifier-null-nib-must-contain-exactly-one-top-level-object-which-must-be-a-uitableviewcell-instance/Screen_Shot_2012-08-15_at_8.07.24_PM.png">
+    <img src="http://jasonbosco.github.io/jasonbos/images/2012-08-15-solution-nsinternalinconsistencyexception-reason-invalid-nib-registered-for-identifier-null-nib-must-contain-exactly-one-top-level-object-which-must-be-a-uitableviewcell-instance/Screen_Shot_2012-08-15_at_8.07.24_PM.png">
 </p>
 
 <p>The solution is to set the number of Prototype Cells to the actual number of different types of cells you have (the
     &#8216;type&#8217; being identified by the &#8216;identifier&#8217;). In my case, I just had 1 type of cell and so I set the number of
     Prototype Cells to 1.</p>
 <p>
-    <img src="/images/2012-08-15-solution-nsinternalinconsistencyexception-reason-invalid-nib-registered-for-identifier-null-nib-must-contain-exactly-one-top-level-object-which-must-be-a-uitableviewcell-instance/Screen_Shot_2012-08-15_at_8.14.22_PM.png">
-</p></div>
+    <img src="http://jasonbosco.github.io/jasonbos/images/2012-08-15-solution-nsinternalinconsistencyexception-reason-invalid-nib-registered-for-identifier-null-nib-must-contain-exactly-one-top-level-object-which-must-be-a-uitableviewcell-instance/Screen_Shot_2012-08-15_at_8.14.22_PM.png">
+</p>]]></content>
+  </entry>
   
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/our-tool-transcribe-is-featured-on-thenextweb/">Our Tool &#8220;Transcribe&#8221; Is Featured on TheNextWeb</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-08-06T00:00:00-07:00" pubdate data-updated="true">Aug 6<span>th</span>, 2012</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><blockquote>
+  <entry>
+    <title type="html"><![CDATA[Our Tool "Transcribe" is featured on TheNextWeb]]></title>
+    <link href="http://jasonbosco.github.io/jasonbos/our-tool-transcribe-is-featured-on-thenextweb/"/>
+    <updated>2012-08-06T00:00:00-07:00</updated>
+    <id>http://jasonbosco.github.io/jasonbos/our-tool-transcribe-is-featured-on-thenextweb</id>
+    <content type="html"><![CDATA[<blockquote>
     <p><span
             style="color: #434343; font-family: Segoe UI, Proxima Nova, Helvetica Neue, Helvetica, Arial, sans-serif; font-size: 14px; line-height: 25.200000762939453px;">Aimed at journalists, students or anyone with a need to convert interviews and such like to the written from,&nbsp;</span><a
             href="https://chrome.google.com/webstore/detail/ogokenmicnjdfhmhocanoemnddmpcjjm" target="_blank"
@@ -447,82 +251,28 @@ terminate called throwing an exception(lldb)</pre>
 <p>Source: <a
         href="http://thenextweb.com/apps/2012/08/04/transcribe-an-awesome-audio-transcription-web-app-for-chrome/">http://thenextweb.com/apps/2012/08/04/transcribe-an-awesome-audio-transcripti&#8230;</a>
 </p>
-</div>
+]]></content>
+  </entry>
   
+  <entry>
+    <title type="html"><![CDATA[Twitter has an issue, let me tweet about it...]]></title>
+    <link href="http://jasonbosco.github.io/jasonbos/twitter-has-an-issue-let-me-tweet-about-it/"/>
+    <updated>2012-07-26T00:00:00-07:00</updated>
+    <id>http://jasonbosco.github.io/jasonbos/twitter-has-an-issue-let-me-tweet-about-it</id>
+    <content type="html"><![CDATA[<img src="http://jasonbosco.github.io/jasonbos/images/2012-07-26-twitter-has-an-issue-let-me-tweet-about-it/Screen_Shot_2012-07-26_at_10.21.45_AM.png">]]></content>
+  </entry>
   
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/twitter-has-an-issue-let-me-tweet-about-it/">Twitter Has an Issue, Let Me Tweet About It&#8230;</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-07-26T00:00:00-07:00" pubdate data-updated="true">Jul 26<span>th</span>, 2012</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><img src="/images/2012-07-26-twitter-has-an-issue-let-me-tweet-about-it/Screen_Shot_2012-07-26_at_10.21.45_AM.png"></div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/facebook-login-with-only-email-and-html7magic/">Facebook Login With Only Email and Html7magic?</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-05-02T00:00:00-07:00" pubdate data-updated="true">May 2<span>nd</span>, 2012</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>I happened to stumble on Carl&#8217;s Jr.&#8217;s Facebook page today and particularly on this post (for no particular reason, I
+  <entry>
+    <title type="html"><![CDATA[Facebook Login With Only Email and html7magic?]]></title>
+    <link href="http://jasonbosco.github.io/jasonbos/facebook-login-with-only-email-and-html7magic/"/>
+    <updated>2012-05-02T00:00:00-07:00</updated>
+    <id>http://jasonbosco.github.io/jasonbos/facebook-login-with-only-email-and-html7magic</id>
+    <content type="html"><![CDATA[<p>I happened to stumble on Carl&#8217;s Jr.&#8217;s Facebook page today and particularly on this post (for no particular reason, I
     should add):&nbsp;</p>
 <p><a href="http://www.facebook.com/91702965455/posts/10151579104835456" target="_blank">http://www.facebook.com/91702965455/posts/10151579104835456</a>
 </p>
 <p>
-    <img src="/images/2012-05-02-facebook-login-with-only-email-and-html7magic/Screen_Shot_2012-05-02_at_8.56.46_PM.png">
+    <img src="http://jasonbosco.github.io/jasonbos/images/2012-05-02-facebook-login-with-only-email-and-html7magic/Screen_Shot_2012-05-02_at_8.56.46_PM.png">
 </p>
 
 <p>and I quickly noticed the login area on the top right. It only had an email field and a login button. (I was not
@@ -535,49 +285,22 @@ terminate called throwing an exception(lldb)</pre>
     to enter their password?</p>
 <p>And then I wondered if this was a CSS issue, and looked at the source code:&nbsp;
 <p>
-    <img src="/images/2012-05-02-facebook-login-with-only-email-and-html7magic/Screen_Shot_2012-05-02_at_8.56.46_PM_2.png">
+    <img src="http://jasonbosco.github.io/jasonbos/images/2012-05-02-facebook-login-with-only-email-and-html7magic/Screen_Shot_2012-05-02_at_8.56.46_PM_2.png">
 </p>
 </p>
 <p>And I was able to confirm that it wasn&#8217;t a CSS issue causing the password field to be hidden. There wasn&#8217;t any input
     field for a password on that page.&nbsp;</p>
 <p>And now I found something else that&#8217;s interesting. A class named &#8220;html7magic&#8221;. What am I to expect?! Is FB out there
     using HTML 7 secretely and somehow translating their HTML7 code to HTML5 to work with current browsers?!&nbsp;</p>
-</div>
+]]></content>
+  </entry>
   
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/scribble-joins-the-ranks-of-evernote-and-springpad-on-the-chrome-web-store/">Scribble Joins the Ranks of Evernote and Springpad on the Chrome Web Store!</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-04-18T00:00:00-07:00" pubdate data-updated="true">Apr 18<span>th</span>, 2012</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>I was curious how people casually browsing through the <a href="https://chrome.google.com/webstore" target="_blank">Chrome web store</a> would discover <a href="https://chrome.google.com/webstore/detail/offpaifnchmpbnjhjbhpdffahlofdkfb"
+  <entry>
+    <title type="html"><![CDATA[Scribble joins the ranks of Evernote and Springpad on the Chrome Web Store!]]></title>
+    <link href="http://jasonbosco.github.io/jasonbos/scribble-joins-the-ranks-of-evernote-and-springpad-on-the-chrome-web-store/"/>
+    <updated>2012-04-18T00:00:00-07:00</updated>
+    <id>http://jasonbosco.github.io/jasonbos/scribble-joins-the-ranks-of-evernote-and-springpad-on-the-chrome-web-store</id>
+    <content type="html"><![CDATA[<p>I was curious how people casually browsing through the <a href="https://chrome.google.com/webstore" target="_blank">Chrome web store</a> would discover <a href="https://chrome.google.com/webstore/detail/offpaifnchmpbnjhjbhpdffahlofdkfb"
                                     target="_blank">Scribble</a>. And so I opened up the Chrome Web Store and browsed
     through the first few tile sets of apps on the home page. I didn&#8217;t find <a
             href="https://chrome.google.com/webstore/detail/offpaifnchmpbnjhjbhpdffahlofdkfb"
@@ -601,46 +324,19 @@ terminate called throwing an exception(lldb)</pre>
     </li>
 </ul>
 <p><img
-        src="/images/2012-04-18-scribble-joins-the-ranks-of-evernote-and-springpad-on-the-chrome-web-store/Scribble_featured_on_chrome_web_store.png">
+        src="http://jasonbosco.github.io/jasonbos/images/2012-04-18-scribble-joins-the-ranks-of-evernote-and-springpad-on-the-chrome-web-store/Scribble_featured_on_chrome_web_store.png">
 </p>
 
 <p>So that&#8217;s how people find out about Scribble!&nbsp;</p>
-</div>
+]]></content>
+  </entry>
   
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/scribble-featured-on-pcworld/">Scribble Featured on PCWorld!</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-04-16T00:00:00-07:00" pubdate data-updated="true">Apr 16<span>th</span>, 2012</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Exciting times as the number of Scribble users increases to 27,000! I wonder how many of those 27,000 users would pay
+  <entry>
+    <title type="html"><![CDATA[Scribble featured on PCWorld!]]></title>
+    <link href="http://jasonbosco.github.io/jasonbos/scribble-featured-on-pcworld/"/>
+    <updated>2012-04-16T00:00:00-07:00</updated>
+    <id>http://jasonbosco.github.io/jasonbos/scribble-featured-on-pcworld</id>
+    <content type="html"><![CDATA[<p>Exciting times as the number of Scribble users increases to 27,000! I wonder how many of those 27,000 users would pay
     for a pro-version of Scribble.</p>
 <blockquote>
     <h1 style="font-size: 33px; color: #143756; line-height: 34px; font-family: Arial, Helvetica, Geneva, sans-serif; padding: 0px; margin: 0px;">
@@ -659,42 +355,15 @@ terminate called throwing an exception(lldb)</pre>
 </blockquote>
 <p>Source: <a href="http://www.pcworld.com/businesscenter/article/253433/5_businesssavvy_chrome_apps.html">http://www.pcworld.com/businesscenter/article/253433/5_businesssavvy_chrome_a&#8230;</a>
 </p>
-</div>
+]]></content>
+  </entry>
   
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/job-posting-for-building-pixza/">Job Posting for Building Pixza</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-04-11T00:00:00-07:00" pubdate data-updated="true">Apr 11<span>th</span>, 2012</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>And so I was looking at the analytics for <a href="http://pixza.com/" target="_blank">Pixza</a>. There was a referral
+  <entry>
+    <title type="html"><![CDATA[Job Posting for Building Pixza]]></title>
+    <link href="http://jasonbosco.github.io/jasonbos/job-posting-for-building-pixza/"/>
+    <updated>2012-04-11T00:00:00-07:00</updated>
+    <id>http://jasonbosco.github.io/jasonbos/job-posting-for-building-pixza</id>
+    <content type="html"><![CDATA[<p>And so I was looking at the analytics for <a href="http://pixza.com/" target="_blank">Pixza</a>. There was a referral
     from gamedev.net. I was curious to find out where Pixza was mentioned on <a href="http//www.gamedev.net"
                                                                                 target="_blank">gamedev.net</a>.&nbsp;And
     I found this post:&nbsp;<a href="http://www.gamedev.net/classifieds/item/306-looking-for-html5-programmer/"
@@ -719,132 +388,255 @@ terminate called throwing an exception(lldb)</pre>
     Pixza from scratch might not take such a long time. We didn&#8217;t have these luxuries when we started working on Pixza.
     All we had was this <a href="http://www.metabrew.com/article/a-million-user-comet-application-with-mochiweb-part-1"
                            target="_blank">Richard Jones&#8217; article</a> to start out with.&nbsp;</p>
-</div>
+]]></content>
+  </entry>
   
+  <entry>
+    <title type="html"><![CDATA[SO: git shows that I deleted all the files in my repo and staged them for commit after I did a git pull..]]></title>
+    <link href="http://jasonbosco.github.io/jasonbos/so-git-shows-that-i-deleted-all-the-files-in-my-repo-and-staged-them-for-commit-after-i-did-a-git-pull/"/>
+    <updated>2012-03-26T00:00:00-07:00</updated>
+    <id>http://jasonbosco.github.io/jasonbos/so-git-shows-that-i-deleted-all-the-files-in-my-repo-and-staged-them-for-commit-after-i-did-a-git-pull</id>
+    <content type="html"><![CDATA[<blockquote class="twitter-tweet">
+    <p>git shows that I deleted all the files in my repo and staged them for commit after I did a git pull. Why? <a
+            href="http://t.co/EewYLzkY" title="http://stackoverflow.com/q/9867957/123545?stw=2">stackoverflow.com/q/9867957/1235&hellip;</a>
+    </p>
+    &mdash; Jason Bosco (@jasonbosco) <a href="https://twitter.com/jasonbosco/status/184176136018857985">March 26,
+    2012</a></blockquote>
+]]></content>
+  </entry>
   
-
-
-    </article>
+  <entry>
+    <title type="html"><![CDATA[Facebook Utility Value]]></title>
+    <link href="http://jasonbosco.github.io/jasonbos/facebook-utility-value/"/>
+    <updated>2012-03-05T00:00:00-08:00</updated>
+    <id>http://jasonbosco.github.io/jasonbos/facebook-utility-value</id>
+    <content type="html"><![CDATA[<p>3.30am</p>
+<p>Working on assignment</p>
+<p>Need to test code on nunki (USC server)&nbsp;</p>
+<p>Upload code</p>
+<p>Compile</p>
+<p>Spawn 10 background instances of the program to see if they work in all cases</p>
+<p>Hmmm, only one instance spews out output. Whatever happened to my other instances.</p>
+<p>ps aux | grep java</p>
+<p>No more instances show up</p>
+<p>But hey look there&#8217;s another user running a similar program, using the same package name</p>
+<p>There&#8217;s someone else doing the assignment at this hour!</p>
+<p>I wonder who it could be?</p>
+<p>USC campus directory -&gt; Search for user name (from ps output) -&gt; Get full name&nbsp;</p>
+<p>Hmmm, do I know this guy?</p>
+<p>Ctrl+T -&gt; facebook.com</p>
+<p>Search for full name</p>
+<p>Hey look we have 5 mutual friends</p>
+<p>Wonder how these guys know each other</p>
+<p>Hey look he&#8217;s worked here here AND here!</p>
+<p>What oh what would I have done without Facebook</p>
+<p>Now where was I?</p>
+<p>Oh snap, I&#8217;m writing this post.&nbsp;</p>
+<p>Back to my assignment.</p>
+<p>3.45am</p>
+]]></content>
+  </entry>
   
-  <div class="pagination">
-    
-      <a class="prev" href="/page/2/">&larr; Older</a>
-    
-    <a href="/blog/archives">Blog Archives</a>
-    
-  </div>
-</div>
-<aside class="sidebar">
+  <entry>
+    <title type="html"><![CDATA[DOS attack on a free service? Come on.]]></title>
+    <link href="http://jasonbosco.github.io/jasonbos/dos-attack-on-a-free-service-come-on/"/>
+    <updated>2012-01-12T00:00:00-08:00</updated>
+    <id>http://jasonbosco.github.io/jasonbos/dos-attack-on-a-free-service-come-on</id>
+    <content type="html"><![CDATA[<p>It&#8217;s incredibly frustrating when someone launches a DOS attack on a <span
+        style="text-decoration: underline;"><strong>free</strong></span> service like <a
+        href="https://chrome.google.com/webstore/detail/offpaifnchmpbnjhjbhpdffahlofdkfb/" target="_blank">Scribble</a>.
+    Come on, we host the app and give you cloud sync for free, paying for the server resources ourselves and then
+    someone does this. So not cool.</p>
+<p>Well, I guess there&#8217;s no point complaining. We&#8217;ll do our best to tackle the attack.</p>
+]]></content>
+  </entry>
   
-    <section>
-  <h1>Recent Posts</h1>
-  <ul id="recent_posts">
-    
-      <li class="post">
-        <a href="/our-first-techcrunch-article/">Our First TechCrunch Article</a>
-      </li>
-    
-      <li class="post">
-        <a href="/transcribe-featured-on-thenextweb-again-35-of-the-best-productivity-and-lifehack-apps-of-2012/">Transcribe featured on TheNextWeb again: 35 of the best productivity and lifehack apps of 2012</a>
-      </li>
-    
-      <li class="post">
-        <a href="/two-timestamp-columns-in-mysql/">Two Timestamp Columns in MySQL</a>
-      </li>
-    
-      <li class="post">
-        <a href="/solution-nsinternalinconsistencyexception-reason-invalid-nib-registered-for-identifier-null-nib-must-contain-exactly-one-top-level-object-which-must-be-a-uitableviewcell-instance/">Solution: &#8216;NSInternalInconsistencyException&#8217;, reason: &#8216;invalid nib registered for identifier ((null)) - nib must contain exactly one top level object which must be a UITableViewCell instance&#8217;</a>
-      </li>
-    
-      <li class="post">
-        <a href="/our-tool-transcribe-is-featured-on-thenextweb/">Our Tool &#8220;Transcribe&#8221; is featured on TheNextWeb</a>
-      </li>
-    
-  </ul>
-</section>
-
-<section>
-  <h1>GitHub Repos</h1>
-  <ul id="gh_repos">
-    <li class="loading">Status updating&#8230;</li>
-  </ul>
-  
-  <a href="https://github.com/jasonbosco">@jasonbosco</a> on GitHub
-  
-  <script type="text/javascript">
-    $(document).ready(function(){
-        if (!window.jXHR){
-            var jxhr = document.createElement('script');
-            jxhr.type = 'text/javascript';
-            jxhr.src = '/javascripts/libs/jXHR.js';
-            var s = document.getElementsByTagName('script')[0];
-            s.parentNode.insertBefore(jxhr, s);
-        }
-
-        github.showRepos({
-            user: 'jasonbosco',
-            count: 0,
-            skip_forks: true,
-            target: '#gh_repos'
-        });
-    });
-  </script>
-  <script src="/javascripts/github.js" type="text/javascript"> </script>
-</section>
-
-
-
-
-
-  
-</aside>
-
+  <entry>
+    <title type="html"><![CDATA[Prime Candidate For SQL Injection!]]></title>
+    <link href="http://jasonbosco.github.io/jasonbos/prime-candidate-for-sql-injection/"/>
+    <updated>2012-01-02T00:00:00-08:00</updated>
+    <id>http://jasonbosco.github.io/jasonbos/prime-candidate-for-sql-injection</id>
+    <content type="html"><![CDATA[<p>I happened to stumble on this site which embeds the SQL query in their URL!&nbsp;</p>
+<div class="CodeRay">
+    <div class="code"><pre>http://www.s-cube-network.eu/refbase/search.php?
+sqlQuery=SELECT%20author%2C%20title%2C%20type%2C%20year%2C%20publication%2C
+%20abbrev_journal%2C%20volume%2C%20issue%2C%20pages%2C%20keywords%2C
+%20abstract%2C%20address%2C%20corporate_author%2C%20thesis%2C
+%20publisher%2C%20place%2C%20editor%2C%20language%2C%20summary_language%2C
+%20orig_title%2C%20series_editor%2C%20series_title%2C%20abbrev_series_title%2C
+%20series_volume%2C%20series_issue%2C%20edition%2C%20issn%2C%20isbn%2C
+%20medium%2C%20area%2C%20expedition%2C%20conference%2C%20notes%2C
+%20approved%2C%20call_number%2C%20serial%20FROM%20refs%20WHERE%20serial
+%20%3D%20494%20ORDER%20BY%20author%2C%20year%20ASC%2C%20publication
+&amp;client=&amp;formType=sqlSearch&amp;submit=Display&amp;viewType=&amp;showQuery=1&amp;showLinks=1
+&amp;showRows=30&amp;rowOffset=&amp;wrapResults=1&amp;citeOrder=&amp;citeStyle=APA&amp;exportFormat=RIS
+&amp;exportType=html&amp;exportStylesheet=&amp;citeType=html&amp;headerMsg=</pre>
     </div>
-  </div>
-  <footer role="contentinfo"><p>
-  Copyright &copy; 2013 - Jason Bosco -
-  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
-</p>
+</div>
 
-</footer>
+<p>
+    <a href="http://www.s-cube-network.eu/refbase/search.php?sqlQuery=SELECT%20author%2C%20title%2C%20type%2C%20year%2C%20publication%2C%20abbrev_journal%2C%20volume%2C%20issue%2C%20pages%2C%20keywords%2C%20abstract%2C%20address%2C%20corporate_author%2C%20thesis%2C%20publisher%2C%20place%2C%20editor%2C%20language%2C%20summary_language%2C%20orig_title%2C%20series_editor%2C%20series_title%2C%20abbrev_series_title%2C%20series_volume%2C%20series_issue%2C%20edition%2C%20issn%2C%20isbn%2C%20medium%2C%20area%2C%20expedition%2C%20conference%2C%20notes%2C%20approved%2C%20call_number%2C%20serial%20FROM%20refs%20WHERE%20serial%20%3D%20494%20ORDER%20BY%20author%2C%20year%20ASC%2C%20publication&amp;client=&amp;formType=sqlSearch&amp;submit=Display&amp;viewType=&amp;showQuery=1&amp;showLinks=1&amp;showRows=30&amp;rowOffset=&amp;wrapResults=1&amp;citeOrder=&amp;citeStyle=APA&amp;exportFormat=RIS&amp;exportType=html&amp;exportStylesheet=&amp;citeType=html&amp;headerMsg="
+       target="_blank">Clickable Link</a></p>
+<p>As you can imagine, the first thing that occured to me was to change that SQL query to something fitting, may be
+    replace the SELECT query with a DELETE? Nah.. I shouldn&#8217;t be malicious I thought. And so I tried a simple UPDATE of
+    one of the attributes, something which if it went through, I could easily revert back and not cause any damage. And
+    so I tried an UPDATE query. Good for them, they atleast restricted the DB user to only perform SELECTs on the table.&nbsp;</p>
+<p>Here I am thinking &#8220;I should sanitize all my input&#8221; worrying about SQL injection and stuff. And I see this. Made my
+    day or should I say year. Happy New Year!</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+]]></content>
+  </entry>
   
+  <entry>
+    <title type="html"><![CDATA[Shifty: A Chrome Extension To Edit Any Webpage From Within The Browser]]></title>
+    <link href="http://jasonbosco.github.io/jasonbos/shifty-a-chrome-extension-to-edit-any-webpage-from-within-the-browser/"/>
+    <updated>2011-12-18T00:00:00-08:00</updated>
+    <id>http://jasonbosco.github.io/jasonbos/shifty-a-chrome-extension-to-edit-any-webpage-from-within-the-browser</id>
+    <content type="html"><![CDATA[<p>When&nbsp;<a href="http://kishorelive.com" target="_blank">Kishore</a> and I iterate over product designs, I often
+    feel the need for a tool that will allow me to propose changes to a HTML mockup by simply clicking and dragging DOM
+    elements from within the browser, instead of taking a screen shot of the page and editing the image.</p>
+<p>Thus was born <a href="https://chrome.google.com/webstore/detail/dlkpkmehbgbpobaidinekoedabkdidnb" target="_blank">Shifty</a>
+    - a Chrome extension to move DOM elements or edit text on any webpage, from within the browser. My workflow is now
+    as easy as turning the extension on, moving elements around and editing text and finally taking a screenshot to
+    capture my changes.</p>
+<p>You should give the extension a shot and let me know how it goes:&nbsp;<a
+        href="https://chrome.google.com/webstore/detail/dlkpkmehbgbpobaidinekoedabkdidnb" target="_blank">https://chrome.google.com/webstore/detail/dlkpkmehbgbpobaidinekoedabkdidnb</a>
+</p>
+<p>Here are some screenshots of the extension in action:</p>
+<ol>
+    <li><img
+            src="http://jasonbosco.github.io/jasonbos/images/2011-12-18-shifty-a-chrome-extension-to-edit-any-webpage-from-within-the-browser/Screen_Shot_2011-12-18_at_3.28.27_PM.png">
+    </li>
+    <li><img
+            src="http://jasonbosco.github.io/jasonbos/images/2011-12-18-shifty-a-chrome-extension-to-edit-any-webpage-from-within-the-browser/Screen_Shot_2011-12-17_at_6.08.55_PM.png">
+    </li>
+    <li><img
+            src="http://jasonbosco.github.io/jasonbos/images/2011-12-18-shifty-a-chrome-extension-to-edit-any-webpage-from-within-the-browser/Screen_Shot_2011-12-18_at_4.01.53_PM.png">
+    </li>
+</ol>
 
+<p>&nbsp;</p>
+<p>In the near future, I plan to add a way to take screenshots from within the extension. More feature suggestions,
+    feedback and bug reports are welcome!</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Xkcd: SQL Injection]]></title>
+    <link href="http://jasonbosco.github.io/jasonbos/xkcd-sql-injection/"/>
+    <updated>2011-12-11T00:00:00-08:00</updated>
+    <id>http://jasonbosco.github.io/jasonbos/xkcd-sql-injection</id>
+    <content type="html"><![CDATA[<p><img src="http://imgs.xkcd.com/comics/exploits_of_a_mom.png" alt=""/></p>
+<p>Source: <a href="http://xkcd.com/327/">http://xkcd.com/327/</a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Fix: Slow Refresh Rate On Hyper-V console running Ubuntu 10.04 LTS]]></title>
+    <link href="http://jasonbosco.github.io/jasonbos/fix-slow-refresh-rate-on-hyper-v-console-running-ubuntu-10-04-lts/"/>
+    <updated>2011-11-18T00:00:00-08:00</updated>
+    <id>http://jasonbosco.github.io/jasonbos/fix-slow-refresh-rate-on-hyper-v-console-running-ubuntu-10-04-lts</id>
+    <content type="html"><![CDATA[<p>When I connect to a virtual machine running Ubuntu 10.04 LTS on Hyper-V, the refresh rate of the console used to be
+    terribly slow. It would refresh the screen <strong>line by line</strong> with each line taking 1 second! It was
+    painfully slow. So, all this while, I used <a href="http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html"
+                                                  target="_blank">putty</a> to SSH into the VM just to avoid using the
+    console. And then came a situation where I locked myself out of the instance (thank you <a
+            href="http://denyhosts.sourceforge.net/" target="_blank">DenyHosts</a>&nbsp;for doing your job well) and I
+    had disabled remote root login. So I was forced to use the console and it was time I find <a
+            href="http://screamingadmin.wordpress.com/2010/07/08/vga16fb-and-ubuntu-10-04-server/" target="_blank">a solution</a> for the slow refresh rate. It was quite simple:</p>
+<p>Add the line</p>
+<div class="CodeRay">
+    <div class="code">
+        <pre>blacklist vga16fb</pre>
+    </div>
+</div>
 
+<p>to</p>
+<div class="CodeRay">
+    <div class="code">
+        <pre>/etc/modprobe.d/blacklist-framebuffer.conf</pre>
+    </div>
+</div>
 
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) {return;}
-  js = d.createElement(s); js.id = id; js.async = true;
-  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
+<p>and restart the virtual machine. And now the refresh rate is back to normal.</p>
+<p>&nbsp;</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[An Old Design Of The Apple Online Store Still Live On Apple.com]]></title>
+    <link href="http://jasonbosco.github.io/jasonbos/an-old-design-of-the-apple-online-store-still-live-on-apple-com/"/>
+    <updated>2011-11-18T00:00:00-08:00</updated>
+    <id>http://jasonbosco.github.io/jasonbos/an-old-design-of-the-apple-online-store-still-live-on-apple-com</id>
+    <content type="html"><![CDATA[<p>Today I had a question for Apple Sales and I <a href="https://www.google.com/?q=apple%20live%20chat" target="_blank">googled</a>
+    for &#8220;apple live chat&#8221;. The third link in my search results pointed to this page:&nbsp;<a
+            href="http://www.apple.com/r/store/livechat/" target="_blank">http://www.apple.com/r/store/livechat/</a>&nbsp;-
+    &#8220;Apple Store - Live Chat&#8221;.&nbsp;<img
+            src="http://jasonbosco.github.io/jasonbos/images/2011-11-18-an-old-design-of-the-apple-online-store-still-live-on-apple-com/Screen_Shot_2011-11-18_at_4.25.22_PM.png"/>
+</p>
+<p>It looks like it is an old page just lying around on apple.com. Ah the classic &#8220;Mac look&#8221; back in the day. It
+    reminded me of the first time I saw a Mac at a design studio in a digital press when I was in 8th grade.&nbsp;</p>
+<p>I tried submitting values into the form and it didn&#8217;t work. The form points to chat.info.apple.com which resolves to
+    17.112.147.216.&nbsp;</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[JSON Formatter]]></title>
+    <link href="http://jasonbosco.github.io/jasonbos/json-formatter/"/>
+    <updated>2011-11-10T00:00:00-08:00</updated>
+    <id>http://jasonbosco.github.io/jasonbos/json-formatter</id>
+    <content type="html"><![CDATA[<p>This is a handy tool that I use to pretty-print JSON especially when I&#8217;m working with APIs:</p>
+<p><a href="http://www.bodurov.com/JsonFormatter/">http://www.bodurov.com/JsonFormatter/</a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[MySQL: Updating Multiple Columns When Using Select]]></title>
+    <link href="http://jasonbosco.github.io/jasonbos/mysql-updating-multiple-columns-when-using-select/"/>
+    <updated>2011-11-08T00:00:00-08:00</updated>
+    <id>http://jasonbosco.github.io/jasonbos/mysql-updating-multiple-columns-when-using-select</id>
+    <content type="html"><![CDATA[<p>I&#8217;ve always wanted to do something like this:</p>
+<div class="CodeRay">
+    <div class="code">
+        <pre>UPDATE table1 SET (col1,col2)=(SELECT x,y FROM table2 WHERE table1. CommonColumn =table2.CommonColumn);</pre>
+    </div>
+</div>
 
+<p>Finally I got around to looking it up and found the <a
+        href="http://stackoverflow.com/questions/2334712/sql-server-update-from-select" target="_blank">answer</a>&nbsp;to
+    how to do it on <span style="font-size: medium;"><strong>SQL Server</strong></span>:</p>
+<div class="CodeRay">
+    <div class="code"><pre>UPDATE
+    table1
+SET
+    table1.col1 = table2.x,
+    table1.col2 = table2.y
+FROM
+    table1
+INNER JOIN
+    table2
+ON
+    table1.CommonColumn = table2.CommonColumn</pre>
+    </div>
+</div>
 
+<p>However, in <strong><span style="font-size: medium;">MySQL</span></strong>&nbsp;this is not supported. To achieve the
+    same effect in MySQL I came up with this:</p>
+<div class="CodeRay">
+    <div class="code"><pre>UPDATE
+    table1 INNER JOIN table2 USING (CommonColumn)
+SET
+    table1.col1 = table2.x,
+    table1.col2 = table2.y</pre>
+    </div>
+</div>
 
-  <script type="text/javascript">
-    (function() {
-      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
-      script.src = 'https://apis.google.com/js/plusone.js';
-      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
-    })();
-  </script>
-
-
-
-  <script type="text/javascript">
-    (function(){
-      var twitterWidgets = document.createElement('script');
-      twitterWidgets.type = 'text/javascript';
-      twitterWidgets.async = true;
-      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
-      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
-    })();
-  </script>
-
-
-
-
-
-</body>
-</html>
+<p>The UPDATE syntax for MySQL is here:</p>
+<p><a href="http://dev.mysql.com/doc/refman/5.6/en/update.html" target="_blank">http://dev.mysql.com/doc/refman/5.6/en/update.html</a>
+</p>
+]]></content>
+  </entry>
+  
+</feed>
